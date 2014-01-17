@@ -328,7 +328,26 @@ $('#selektor').addClass 'klass' # Yes
 foo(4).bar 8 # Yes
 ```
 
-In cases when a function is only used by a class itself, declare that function as a private method within the class's closure and reference it in the class. Do not expose methods and properties that are not meant to be available to other parts of the code.
+In cases when a function is only used by a class itself, declare that function as a private method within the class's closure and reference it in the class. *Do not* expose methods that are not meant to be available to other parts of the code.
+
+```coffeescript
+# No
+class Greeter
+  _getPrefix: -> if @mood is 'good' then 'Hey there,' else 'Buzz off,'
+  constructor: (mood) ->
+  	@mood = mood
+  greet: (name) ->
+  	console.log "#{_getPrefix()} #{name}"
+
+ # Yes
+ _getPrefix: -> if @mood is 'good' then 'Hey there,' else 'Buzz off,'
+
+ class Greeter
+  constructor: (mood) ->
+  	@mood = mood
+  greet: (name) ->
+  	console.log "#{_getPrefix.call(this)} #{name}"
+```
 
 <a name="strings"/>
 ## Strings
@@ -345,7 +364,7 @@ Prefer single quoted strings (`''`) instead of double quoted (`""`) strings, unl
 <a name="conditionals"/>
 ## Conditionals
 
-Favor `if (not x)` over `unless` for negative conditions.
+Favor `if not` over `unless` for negative conditions.
 
 Instead of using `unless...else`, use `if...else`:
 
@@ -384,6 +403,9 @@ Take advantage of lodash functions whenever possible. If there isn't an appropri
 
 ```coffeescript
 # Yes
+result = _.pick array, 'name'
+
+# If lodash isn't available
 result = (item.name for item in array)
 
 # No
@@ -404,14 +426,26 @@ result = (item for item in array when item.name is "test")
 To iterate over the keys and values of objects:
 
 ```coffeescript
-object = one: 1, two: 2
-alert("#{key} = #{value}") for key, value of object
+object =
+	one: 1
+	two: 2
+console.log "#{key} = #{value}" for own key, value of object
+```
+
+### `for ... of` vs. `for own ... of`
+Use `for own ... of` over `for ... of`. This ensures that you are only enumerating over _direct_ enumerable properties of the object, and not those within its prototype chain.
+
+```coffeescript
+# Logs all jQuery functions, etc.
+console.log "#{k} = #{v}" for k, v of $('.foo')
+# Logs only those properties directly attached to $('.foo')
+console.log "#{k} = #{v}" for own k, v of $('.foo')
 ```
 
 <a name="#extending_native_objects"/>
 ## Extending Native Objects
 
-Do not modify native objects. Ever.
+Do not modify native objects. <strong>Ever.</strong>
 
 For example, do not modify `Array.prototype` to introduce `Array#forEach`.
 
