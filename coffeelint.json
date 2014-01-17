@@ -12,9 +12,9 @@
     },
     "no_trailing_whitespace": {
         "name": "no_trailing_whitespace",
-        "level": "warn",
+        "level": "error",
         "allowed_in_comments": false,
-        "allowed_in_empty_lines": true
+        "allowed_in_empty_lines": false
     },
     "max_line_length": {
         "name": "max_line_length",
@@ -50,7 +50,7 @@
     },
     "no_implicit_braces": {
         "name": "no_implicit_braces",
-        "level": "ignore",
+        "level": "warn",
         "strict": true
     },
     "no_plusplus": {
@@ -71,7 +71,7 @@
     },
     "no_empty_param_list": {
         "name": "no_empty_param_list",
-        "level": "warn"
+        "level": "error"
     },
     "no_stand_alone_at": {
         "name": "no_stand_alone_at",
@@ -92,7 +92,7 @@
     "cyclomatic_complexity": {
         "name": "cyclomatic_complexity",
         "value": 10,
-        "level": "ignore"
+        "level": "warn"
     },
     "newlines_after_classes": {
         "name": "newlines_after_classes",
