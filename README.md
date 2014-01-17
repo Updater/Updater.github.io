@@ -241,10 +241,10 @@ For constants, use all uppercase with underscores:
 CONSTANT_LIKE_THIS
 ```
 
-Methods and variables that are intended to be "private" should begin with a leading underscore:
+Variables that are intended to be "private" should begin with a leading underscore:
 
 ```coffeescript
-_privateMethod: ->
+_privateVar = 'asdf'
 ```
 
 <a name="functions"/>
