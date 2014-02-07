@@ -28,6 +28,7 @@ The details in this guide have been very heavily inspired by several existing st
     * [Blank Lines](#blank_lines)
     * [Trailing Whitespace](#trailing_whitespace)
     * [Encoding](#encoding)
+    * [Code Complexity](#code_complexity)
   * [Module Imports](#module_imports)
   * [Whitespace in Expressions and Statements](#whitespace)
   * [Arrays, Objects and Commas](#commas)
@@ -80,6 +81,11 @@ Do not include trailing whitespace on any lines.
 ### Encoding
 
 UTF-8 is the preferred source file encoding.
+
+<a name="code_complexity"/>
+### Code Complexity
+
+The cyclomatic complexity of your code should be 10 or less. This means that any given top level function or keyword should have no more than 10 nested `function`s or `if`/`switch`/`while`s. If your code requires nesting this deep, consider breaking your code into smaller functions that are then referenced in the higher-level function.
 
 <a name="module_imports"/>
 ## Module Imports

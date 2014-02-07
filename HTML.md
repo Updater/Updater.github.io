@@ -1,6 +1,6 @@
 # Updater HTML Style Guide
 
-If you're visiting from the internet, feel free to learn from our style. This is a guide we use for our own apps internally at GitHub. We encourage you to set up one that works for your own team.
+If you're visiting from the internet, feel free to learn from our style. This is a guide we use for our own apps internally at Updater. We encourage you to set up one that works for your own team.
 
 ## Doctype
 
