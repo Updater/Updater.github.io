@@ -16,6 +16,7 @@ All javascript files should be kept in `assets/js/`. If the script is meant to b
 * Include a single space after the `if` and `function` keywords.
 * Indentation is done using 2 spaces.
 * Use camelCase for variable names instead of underscores.
+* When a variable is a jQuery object, its name should start with `$` so it's clear that it's an object and not a DOM node.
 * Wrap modules in an IIFE and feed it the global namespace and generally avoid polluting the global namespace.
 * In javascript **always** use a semicolon when appropriate.
 * Document your code as much as possible inline to clarify sections of code and at the top of the file for block comments.
@@ -51,28 +52,6 @@ When writing your CoffeeScript be sure to follow the Updater CoffeeScript Style 
 
 Once you have created a new CoffeeScript file and written tests for it, also make sure that the file/functionality is being linted by coffeelint and your tests are passing.
 
-## Migrating to Angular
+## Migrating to A Client-side MVC Framework
 
-To increase the clarity and modularity of our codebase, we will start to use a client-side MVC framework. The most appropriate framework for our particular use case is Angular. It provides a base for well-structured, testable javascript and encourages developers to engage best practices. It provides us with simple tools to reduce the complexity of the website for mobile users and decreasing the overall number of network requests at the same time. It also provides a litany of utilities that will make it easier for designers and junior developers to add functionality to the site just by adding attributes to HTML elements.
-
-It is important to remember when writing code with Angular that our site depends on SEO and page accessibility and that important text and functionality should **never** be written in the scripts. Our intention with all our scripts should be to *extend* existing functionality and not to replace it. So, doing something like the following is a good practice because it doesn't interfere with the normal operation of the site and still includes the important text on the site:
-
-```html
-<!-- We don't need this to render on mobile -->
-<div ng-if='isDesktop'>
-  <img ng-src='imgSrc' alt='Illustration of person clicking button.' />
-</div>
-<button class='btn btn-primary'>Click me!</button>
-```
-
-While the following should not be done because it relies on javascript to render an important part of the site which won't be seen by web crawlers and will likely cause trouble for screen readers:
-
-```html
-<ul class='nav'>
-  <li ng-repeat='menuItem in menuItems'>
-    <a href='{{menuItem.link}}'>{{menuItem.text}}</a>
-  </li>
-</ul>
-```
-
-On that note, also be aware of what text we *don't* want search engines to read. Don't include feedback from client-side validation or other javascript events on the page in hidden HTML elements. Instead create the elements with JavaScript. If you need to create complex elements, consider using an HTML template in a script tag as described in the Updater HTML Style Guide.
+To increase the clarity and modularity of our codebase, we will start to use a client-side MVC framework.

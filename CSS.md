@@ -80,7 +80,9 @@ Any partner-specific CSS should be stored in the assets/css/partner/ folder. Thi
 
 ## Pixels vs. Ems
 
-Use `px` for font-size, because it offers absolute control over text. Additionally, `line-height` should never have a unit because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the font-size.
+Use `62.5%` for the root `font-size`, because it makes all other numbers easier to understand. For all other `font-size`s, use `em`s. This is because versions of IE below 10 do not offer zoom functionality and can only change relative font sizes for accessibility. For the same reason, don't use `rem`s because of their poor historical browser support. Additionally, `line-height` should never have a unit because it does not inherit a percentage value of its parent element, but instead is based on a multiplier of the font-size.
+
+Reference: [Pixels vs Ems](http://snook.ca/archives/html_and_css/font-size-with-rem)
 
 ## Class naming conventions
 
@@ -90,7 +92,7 @@ Never reference `js-` prefixed class names from CSS files. `js-` are used exclus
 
 Because of their very high specificity it's recommended to never use IDs for CSS. Use a descriptive class name and nest as little as possible so that your modular CSS rules are easy to override in other sections of the site.
 
-Only start with an element + class namespace when writing styles that need to override other classes and when the styles will only ever be applied to one type of element, prefer direct descendant selectors by default, and use as little specificity as possible. Always include a newline between selectors. Here is a good example:
+Only start with an element + class namespace when writing styles that need to override other classes and when the styles will only ever be applied to one type of element, prefer concise selectors by default, and use as little specificity as possible. Always include a newline between selectors. Here is a good example:
 
 ```html
 <ul class="category-list">
@@ -105,7 +107,7 @@ Only start with an element + class namespace when writing styles that need to ov
 ul.category-list {
   padding-left: 20px;
 
-  &>li { // direct descendant selector > for list items
+  .list-item { // direct descendant selector > for list items
     list-style-type: disc;
 
     a { // minimal specificity for all links
@@ -120,3 +122,7 @@ ul.category-list {
 * If you must use an id selector (`#selector`) make sure that you have no more than one in your rule declaration. A rule like `#header .search #quicksearch { ... }` is considered harmful.
 * When modifying an existing element for a specific use, try to use specific class names. Instead of `.listings-layout.bigger` use rules like `.listings-layout.listings-bigger`. Think about `ack/grepping` your code in the future.
 * The class names `disabled`, `mousedown`, `danger`, `hover`, `selected`, `active` and any others used by Bootstrap should always be namespaced by a class (`button.selected` is a good example).
+
+## Grid Layouts
+
+We use Bootstrap's grid system and this should be embraced in design and development as much as possible. The grid system keeps positioning styles out of our CSS and makes our HTML easier to read and write.

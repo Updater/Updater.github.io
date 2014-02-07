@@ -58,13 +58,17 @@ Any styles relating to a page should always be stored in an external style docum
 
 Try to always be mindful of SEO and accessibility best practices. Use clear and verbose descriptions when writing text or at least clear and simple descriptions for labels and short text.
 
-Use descriptive alt text for images if they're important content and keep them as a background image if they're not important content. Try to always have images available in the most appropriate format. JPG for photos and SVG+PNG for icons, logos and things that have large blocks of solid color.
-
 Keep in mind that javascript may fail or be disabled for some users and code the site to be functional even without javascript. Forms should submit on their own, links should take you to another page and content should be on the page by default if it's important.
+
+## Images
+
+The most preferred way to send icons and other scalable images is with an icon font. New icons should be added to our main icon font. Make sure to take note of the character assigned to the icon and use that character in CSS's `content` property to add the icon to the page. Icon size can then be controlled with `font-size` and positioning with other standard CSS properties.
+
+Use descriptive alt text for images if they're important content and keep them as a background image if they're not important content. Try to always have images available in the most appropriate format. JPG for photos and SVG+PNG for icons, logos and things that have large blocks of solid color.
 
 ## Templates
 
-Server-side, all of our HTML is written using Handlebars and client-side, any templating should be overlayed on that HTML using Angular. Server-side, use standard handlebars includes like:
+Server-side, all of our HTML is written using Handlebars and client-side, any templating should be overlayed on that HTML. Server-side, use standard handlebars includes like:
 
 ```handlebars
 {{> error-template}}
@@ -72,8 +76,12 @@ Server-side, all of our HTML is written using Handlebars and client-side, any te
 
 All included javascript templates should have names ending with `-template.hbs`. While it it acceptable to inline templates in this way, never inline real scripts in handlebars templates. 
 
-Any html templates that need to be injected on the page should be kept in separate files, in `<script type='text/ng-template' id='error-template'>` tags. The file should be saved in `views/templates/` and inline-required in the affected handlebars page/partial. This will allow designers and junior developers to easily see how HTML is structured and apply appropriate styles.
+Any html templates that need to be injected on the page should be kept in separate files, in `<script type='text/x-template' id='error-template'>` tags. The file should be saved in `views/templates/` and inline-required in the affected handlebars page/partial. This will allow designers and junior developers to easily see how HTML is structured and apply appropriate styles.
 
 ## Scripts
 
 Always include scripts as far toward the bottom of the document as possible. If the script isn't critical for the functionality of the page or other scripts, load it asynchronously. Always use links and never inline scripts.
+
+## Buttons and Links
+
+Keeping in line with the idea that our site should more or less work without JavaScript enabled, make sure to use the appropriate element type for your buttons. If it's a link that goes to another page, it should be an `<a>`. If it's a button that moves something around on a page like a "Read more..." icon, it should be a `<button>`. If it's a button that submits a form to the server, it should be either a `<button>` or an `<input type='submit'>`. Buttons and links should never be represented by a `<span>` and anchor(`<a>`) tags should never have a blank `href` attribute or an `href` where the content is `#` or `javascript:;`.
