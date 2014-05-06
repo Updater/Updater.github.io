@@ -2,17 +2,61 @@
 //
 //## Gray and brand colors for use across Bootstrap.
 
-$gray-darker:            #404041;
-$gray-dark:              #666667;
-$gray:                   #8c8c8d;
-$gray-light:             #bababb;
-$gray-lighter:           #d9d9d9;
+$gray-darker: $neutral-darker;
+$gray-dark: $neutral-dark;
+$gray: $neutral-mid;
+$gray-light: $neutral-light;
+$gray-lighter: $neutral-lighter;
 
-$brand-primary:         #2b7499;
-$brand-success:         #56b784;
-$brand-info:            #ffefad;
-$brand-warning:         #ffe98f;
-$brand-danger:          #f84e57;
+$brand-primary: $blue-darker;
+$brand-success: $green-darker;
+$brand-info: $yellow-dark;
+$brand-warning: $yellow-darker;
+$brand-danger: $red-darker;
+
+
+//== Updater Colors
+//
+
+//## Blues
+$blue-darker: #2b7499;
+$blue-dark: #5590ad;
+$blue-mid: #80acc2;
+$blue-light: #aac7d6;
+$blue-lighter: #d5e3eb;
+$blue-lightest: #f3fcff;
+
+//## Greens
+$green-darker: #56b784;
+$green-dark: #75c79b;
+$green-mid: #92d7b2;
+$green-light: #b1e7c9;
+$green-lighter: #e3f4eb;
+$green-lightest: #f4fbf7;
+
+//## Reds
+$red-darker: #f84e57;
+$red-dark: #f97179;
+$red-mid: #fb959a;
+$red-light: #fcb8bc;
+$red-lighter: #fee8e9;
+
+//## Yellows
+$yellow-darker: #ffe98f;
+$yellow-dark: #ffefad;
+$yellow-mid: #fff7db;
+$yellow-light: #fffcec;
+$yellow-lighter: #fffdf5;
+$yellow-lightest: #fffdf5;
+
+//## Grays
+$neutral-darker: #404041;
+$neutral-dark: #666667;
+$neutral-mid: #8c8c8d;
+$neutral-light: #bababb;
+$neutral-lighter: #d9d9d9;
+$neutral-lightest: #efefef;
+$neutral-lighterest: #f5f5f5;
 
 
 //== Scaffolding
