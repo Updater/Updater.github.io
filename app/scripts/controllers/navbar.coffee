@@ -6,6 +6,9 @@ angular.module('updaterStyleGuidesApp')
       title: 'Home'
       link: '/'
     ,
+      title: 'UI Components'
+      link: '/ui-components'
+    ,
       title: 'Ruby'
       link: '/ruby'
     ,

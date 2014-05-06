@@ -30,6 +30,9 @@ angular.module('updaterStyleGuidesApp', [
       .when '/slim',
         templateUrl: 'partials/slim'
         controller: 'SlimCtrl'
+      .when '/ui-components',
+        templateUrl: 'partials/ui-components'
+        controller: 'UiComponentsCtrl'
       .otherwise
         redirectTo: '/'
 
