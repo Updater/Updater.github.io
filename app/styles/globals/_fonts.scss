@@ -1,0 +1,75 @@
+$s3-fonts: 'https://updater-partners.s3.amazonaws.com/fonts';
+$maquette: 'maquette';
+
+$light-font-file: 'arsmaquettepro-light-webfont';
+$lightItalic-font-file: 'arsmaquettepro-lightitalic-webfont';
+$regular-font-file: 'arsmaquettepro-light-webfont';
+$regularItalic-font-file: 'arsmaquettepro-lightitalic-webfont';
+$bold-font-file: 'arsmaquettepro-medium-webfont';
+$boldItalic-font-file: 'arsmaquettepro-mediumitalic-webfont';
+
+@font-face {
+    font-family: $maquette;
+    src: url('#{$s3-fonts}/#{$light-font-file}.eot');
+    src: url('#{$s3-fonts}/#{$light-font-file}.eot?#iefix') format('embedded-opentype'),
+         url('#{$s3-fonts}/#{$light-font-file}.woff') format('font-woff'),
+         url('#{$s3-fonts}/#{$light-font-file}.ttf') format('truetype'),
+         url('#{$s3-fonts}/#{$light-font-file}.svg#{$light-font-file}') format('svg');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: $maquette;
+    src: url('#{$s3-fonts}/#{$lightItalic-font-file}.eot');
+    src: url('#{$s3-fonts}/#{$lightItalic-font-file}.eot?#iefix') format('embedded-opentype'),
+         url('#{$s3-fonts}/#{$lightItalic-font-file}.woff') format('font-woff'),
+         url('#{$s3-fonts}/#{$lightItalic-font-file}.ttf') format('truetype'),
+         url('#{$s3-fonts}/#{$lightItalic-font-file}.svg#{$lightItalic-font-file}') format('svg');
+    font-weight: 200;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: $maquette;
+    src: url('#{$s3-fonts}/#{$regular-font-file}.eot');
+    src: url('#{$s3-fonts}/#{$regular-font-file}.eot?#iefix') format('embedded-opentype'),
+         url('#{$s3-fonts}/#{$regular-font-file}.woff') format('font-woff'),
+         url('#{$s3-fonts}/#{$regular-font-file}.ttf') format('truetype'),
+         url('#{$s3-fonts}/#{$regular-font-file}.svg#{$regular-font-file}') format('svg');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: $maquette;
+    src: url('#{$s3-fonts}/#{$regularItalic-font-file}.eot');
+    src: url('#{$s3-fonts}/#{$regularItalic-font-file}.eot?#iefix') format('embedded-opentype'),
+         url('#{$s3-fonts}/#{$regularItalic-font-file}.woff') format('font-woff'),
+         url('#{$s3-fonts}/#{$regularItalic-font-file}.ttf') format('truetype'),
+         url('#{$s3-fonts}/#{$regularItalic-font-file}.svg#{$regularItalic-font-file}') format('svg');
+    font-weight: 400;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: $maquette;
+    src: url('#{$s3-fonts}/#{$bold-font-file}.eot');
+    src: url('#{$s3-fonts}/#{$bold-font-file}.eot?#iefix') format('embedded-opentype'),
+         url('#{$s3-fonts}/#{$bold-font-file}.woff') format('font-woff'),
+         url('#{$s3-fonts}/#{$bold-font-file}.ttf') format('truetype'),
+         url('#{$s3-fonts}/#{$bold-font-file}.svg#{$bold-font-file}') format('svg');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: $maquette;
+    src: url('#{$s3-fonts}/#{$boldItalic-font-file}.eot');
+    src: url('#{$s3-fonts}/#{$boldItalic-font-file}.eot?#iefix') format('embedded-opentype'),
+         url('#{$s3-fonts}/#{$boldItalic-font-file}.woff') format('font-woff'),
+         url('#{$s3-fonts}/#{$boldItalic-font-file}.ttf') format('truetype'),
+         url('#{$s3-fonts}/#{$boldItalic-font-file}.svg#{$boldItalic-font-file}') format('svg');
+    font-weight: 800;
+    font-style: italic;
+}

@@ -2,4 +2,256 @@
   .col-xs-12
     div(ng-include="'partials/navbar.html'")
 
-    p This is the UI components view.Hi.
+
+/***** TYPOGRAPHY
+
+.row
+  .col-md-12
+    h3.subtle-underline Typography
+    h5 general
+
+/* Paragraphs
+.row
+  .col-md-4
+    p.lead
+      strong> I am a lead paragraph.
+      | I am good for introducing content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula. Sed iaculis risus sit amet ligula adipiscing porttitor et ut enim.
+      span.text-muted.small<
+        | 17px - 29/17 - 1px
+  .col-md-4
+    p
+      strong> I am a paragraph.
+      | Hobbies include: being legible. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula. Sed iaculis risus sit amet ligula adipiscing porttitor et ut enim. Phasellus sed pretium lorem, in venenatis turpis. Integer ut mattis eros. <a href="#">Oh hai, I’m a link</a>.
+      span.text-muted.small<
+        | 15px - 27/15 - 1px
+  .col-md-4
+    p.small
+      strong> I am a small paragraph.
+      | I am small text. I complement paragraph text very nicely. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula. Sed iaculis risus sit amet ligula adipiscing porttitor et ut enim. Phasellus sed pretium lorem.
+      span.text-muted.small<
+        | 13px - 22/13 - 1px
+
+.row
+  .col-md-4
+    p.small.text-muted
+      strong> I am a subtle paragraph.
+      | I'm, like, barely here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula. Sed iaculis risus sit amet ligula adipiscing porttitor et ut enim. Phasellus sed pretium lorem.
+      span.text-muted.small<
+        | 13px - 22/13 - 1px
+  .col-md-4
+    p.tiny
+      strong> I am tiny text.
+      | I am mighty and often contain important information. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula. Sed iaculis risus sit amet ligula adipiscing porttitor et ut enim. Phasellus sed pretium lorem, in venenatis turpis. Integer ut mattis eros.
+      span.text-muted.small<
+        | 11px - 18/11 - 1px
+  .col-md-4
+    blockquote
+      | I am a block quote. I love being blocky. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula.
+
+/* Headers
+.row
+  .col-md-12
+    h5 headers
+
+    h1 H1. The quick brown fox jumped over the lazy dog
+    h2 H2. The quick brown fox jumped over the lazy dog
+    h3 H3. The quick brown fox jumped over the lazy dog
+    h4 H4. The quick brown fox jumped over the lazy dog
+    h5 H5. The quick brown fox jumped over the lazy dog
+
+
+/***** LISTS
+
+.row
+  .col-md-12
+    h3.subtle-underline Lists
+
+.row
+  .col-md-4
+    h5 icon list
+    ul.icon-list
+      li.icon-flag
+        strong> I am the prettiest list of all.
+        | Lorem ipsum dolor sit amet
+      li.icon-code
+        strong> I am the prettiest list of all.
+        | Lorem ipsum dolor sit amet
+      li.icon-folder
+        strong> I am the prettiest list of all.
+        | Lorem ipsum dolor sit amet
+  .col-md-4
+    h5 checked list
+    ul.checked-list
+      li
+        strong> I am an accomplished list.
+        | Lorem ipsum dolor sit amet
+      li
+        strong> Some say I'm uptight.
+        | Lorem ipsum dolor sit amet
+      li
+        strong> It's true that I was born a sociopath.
+        | Lorem ipsum dolor sit amet
+  .col-md-4
+    h5 bullet list
+    ul
+      li.icon-flag
+        strong> I'm a basic list.
+        | Lorem ipsum dolor sit amet
+      li.icon-code
+        strong> Some say I'm boring.
+        | Lorem ipsum dolor sit amet
+      li.icon-folder
+        strong> But they just don't know the real me.
+        | Lorem ipsum dolor sit amet
+
+
+/***** COLORS
+
+.row
+  .col-md-12
+    h3.subtle-underline Colors
+    h5 primary
+
+/* Blues
+.row
+  .col-sm-2
+    .swatch-card #2b7499
+  .col-sm-2
+    .swatch-card #5590ad
+  .col-sm-2
+    .swatch-card #80acc2
+  .col-sm-2
+    .swatch-card #aac7d6
+  .col-sm-2
+    .swatch-card #d5e3eb
+  .col-sm-2
+    .swatch-card #f3fcff
+
+/* Greens
+.row
+  .col-sm-2
+    .swatch-card #56b784
+  .col-sm-2
+    .swatch-card #75c79b
+  .col-sm-2
+    .swatch-card #92d7b2
+  .col-sm-2
+    .swatch-card #b1e7c9
+  .col-sm-2
+    .swatch-card #e3f4eb
+  .col-sm-2
+    .swatch-card #f4fbf7
+
+/* Reds
+.row
+  .col-sm-2
+    .swatch-card #f84e57
+  .col-sm-2
+    .swatch-card #f97179
+  .col-sm-2
+    .swatch-card #fb959a
+  .col-sm-2
+    .swatch-card #fcb8bc
+  .col-sm-2
+    .swatch-card #fee8e9
+
+/* Yellows
+.row
+  .col-sm-2
+    .swatch-card #ffe98f
+  .col-sm-2
+    .swatch-card #ffefad
+  .col-sm-2
+    .swatch-card #fff7db
+  .col-sm-2
+    .swatch-card #fffcec
+  .col-sm-2
+    .swatch-card #fffdf5
+
+/* Grays
+.row
+  .col-md-12
+    h5
+      | neutrals
+.row
+  .col-sm-2
+    .swatch-card #404041
+  .col-sm-2
+    .swatch-card #666667
+  .col-sm-2
+    .swatch-card #8c8c8d
+  .col-sm-2
+    .swatch-card #bababb
+  .col-sm-2
+    .swatch-card #d9d9d9
+  .col-sm-2
+    .swatch-card #efefef
+  .col-sm-2
+    .swatch-card #f5f5f5
+
+
+/***** ICONS
+
+.row
+  .col-md-12
+    h3.subtle-underline Iconography
+    p
+      | <a href="#">Click here for a full list of icons</a>
+
+.row
+  .col-md-12
+    h5 updater-brand
+    p
+      strong> Iconography is a fundamental part of our messaging.
+      | Our Updater-branded icons are responsive and used across our website, emails, and partner sites.
+
+.row
+  .col-md-3
+    | icon goes here
+  .col-md-3
+    | icon goes here
+  .col-md-3
+    | icon goes here
+  .col-md-3
+    | icon goes here
+
+.row
+  .col-md-12
+    h5 branded icons
+    p In the event that a partner demands a bespoke end-user experience, we use these icons.
+
+.row
+  .col-md-3
+    | icon goes here
+  .col-md-3
+    | icon goes here
+  .col-md-3
+    | icon goes here
+  .col-md-3
+    | icon goes here
+
+
+/***** LOGO
+
+.row
+  .col-md-12
+    h3.subtle-underline Logo
+
+.row
+  .col-md-4
+    | logo variation here
+  .col-md-4
+    | logo variation here
+  .col-md-4
+    | logo variation here
+
+
+/***** FAVICON
+
+.row
+  .col-md-12
+    h3.subtle-underline Favicon
+
+.row
+  .col-md-12
+    | favicon goes here
