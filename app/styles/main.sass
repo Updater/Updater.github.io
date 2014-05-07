@@ -1,9 +1,55 @@
-$icon-font-path: '/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/'
+@import 'globals/fonts'
 
 @import 'globals/variables'
+
+
+$icon-font-path: '/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/'
+
 @import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap'
+@import 'globals/type'
+
+html
+  -webkit-tap-highlight-color: transparent
+  -webkit-font-smoothing: antialiased
+  -webkit-text-size-adjust: 100%
+  -ms-text-size-adjust: none
+  font-smooth: always
+
+body
+  letter-spacing: 1px
 
 .style-guide
   .header
     .nav-pills
       padding: 2em 0
+
+h1, h2, h3, h4, h5, h6
+  font-weight: 200
+
+h1
+  line-height: (52 / 35)
+
+h2
+  line-height: (45 / 30)
+
+h3
+  line-height: (37 / 25)
+
+h4
+  line-height: (30 / 20)
+
+h5
+  line-height: (27 / 15)
+
+h5
+  color: $neutral-mid
+  line-height: (27 / 13)
+  text-transform: uppercase
+  letter-spacing: 2px
+
+.subtle-underline
+  display: inline-block
+  border-bottom: 2px solid $neutral-lightest
+
+.tiny
+  font-size: $font-size-tiny
