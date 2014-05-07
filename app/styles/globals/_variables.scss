@@ -84,17 +84,17 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace;
 $font-family-base:        $font-family-sans-serif;
 
-$font-size-large: 17px;
 $font-size-base: 15px;
-$font-size-small: 13px;
-$font-size-tiny: 11px;
+$font-size-large: ceil(($font-size-base * 1.13));
+$font-size-small: ceil(($font-size-base * 0.85));
+$font-size-tiny: ceil(($font-size-base * 0.73));
 
-$font-size-h1: 35px;
-$font-size-h2: 30px;
-$font-size-h3: 25px;
-$font-size-h4: 20px;
-$font-size-h5: 15px;
-$font-size-h6: 13px;
+$font-size-h1: ceil(($font-size-base * 2.33));
+$font-size-h2: floor(($font-size-base * 2));
+$font-size-h3: ceil(($font-size-base * 1.66));
+$font-size-h4: ceil(($font-size-base * 1.33));
+$font-size-h5: $font-size-base;
+$font-size-h6: ceil(($font-size-base * 0.85));
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:        1.8; // 20/14
@@ -135,9 +135,9 @@ $padding-xs-horizontal:     5px;
 $line-height-large:         1.33;
 $line-height-small:         1.5;
 
-$border-radius-base:        0;
-$border-radius-large:       0;
-$border-radius-small:       0;
+$border-radius-base:        3px;
+$border-radius-large:       5px;
+$border-radius-small:       3px;
 
 //** Global color for active items (e.g., navs or dropdowns).
 $component-active-color:    $white;
@@ -506,20 +506,20 @@ $jumbotron-font-size:            ceil(($font-size-base * 1.5));
 //
 //## Define colors for form feedback states and, by default, alerts.
 
-$state-success-text:             $brand-success;
-$state-success-bg:               #dff0d8;
+$state-success-text:             $green-darker;
+$state-success-bg:               $green-light;
 $state-success-border:           darken($state-success-text, 5%);
 
 $state-info-text:                $brand-info;
-$state-info-bg:                  #d9edf7;
+$state-info-bg:                  $brand-info;
 $state-info-border:              darken($state-info-text, 7%);
 
 $state-warning-text:             $brand-warning;
-$state-warning-bg:               #fcf8e3;
+$state-warning-bg:               $brand-warning;
 $state-warning-border:           darken($state-warning-text, 5%);
 
 $state-danger-text:              $brand-danger;
-$state-danger-bg:                #f2dede;
+$state-danger-bg:                $brand-danger;
 $state-danger-border:            darken($state-danger-text, 5%);
 
 
@@ -530,15 +530,15 @@ $state-danger-border:            darken($state-danger-text, 5%);
 //** Tooltip max width
 $tooltip-max-width:           200px;
 //** Tooltip text color
-$tooltip-color:               $white;
+$tooltip-color:               $neutral-darker;
 //** Tooltip background color
-$tooltip-bg:                  $gray-dark;
-$tooltip-opacity:             .9;
+$tooltip-bg:                  $white;
+$tooltip-opacity:             1.0;
 
 //** Tooltip arrow width
 $tooltip-arrow-width:         5px;
 //** Tooltip arrow color
-$tooltip-arrow-color:         $tooltip-bg;
+$tooltip-arrow-color:         $neutral-lighter;
 
 
 //== Popovers

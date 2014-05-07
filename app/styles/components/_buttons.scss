@@ -28,8 +28,7 @@
   }
 
   &:hover,
-  &:focus,
-  &.hover {
+  &:focus {
     color: $btn-default-color;
     text-decoration: none;
   }

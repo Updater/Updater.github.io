@@ -5,28 +5,43 @@ blockquote {
   margin: 0 0 $line-height-computed;
   font-size: $blockquote-font-size;
   border-left: none;
-
-  p, ul, ol {
-    &:last-child {
-      margin-bottom: 0;
-    }
-  }
-}
-
-// Opposite alignment of blockquote
-//
-// Heads up: `blockquote.pull-right` has been deprecated as of v3.1.0.
-.blockquote-reverse,
-blockquote.pull-right {
-  padding-right: 15px;
-  padding-left: 0;
-  border-right: 5px solid $blockquote-border-color;
-  border-left: 0;
-  text-align: right;
 }
 
 // Quotes
 blockquote:before,
 blockquote:after {
   content: "";
+}
+
+h1,h2, h3, h4, h5, h6 {
+  font-weight: 200
+}
+
+h1 {line-height: (52 / 35);}
+
+h2 {line-height: (45 / 30);}
+
+h3 {line-height: (37 / 25);}
+
+h4 {line-height: (30 / 20);}
+
+h5 {
+  line-height: (27 / 15);
+  font-weight: 800;
+}
+
+h6 {
+  color: $neutral-mid;
+  line-height: (27 / 13);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.subtle-underline {
+  display: inline-block;
+  border-bottom: 2px solid $neutral-lightest;
+}
+
+.tiny {
+  font-size: $font-size-tiny;
 }
