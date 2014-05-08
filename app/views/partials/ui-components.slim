@@ -424,13 +424,15 @@
     p
       | Sometimes, we'll employ the use of a headline with a 2px line going through it.
 
-    span.text-danger example of horizontal line thru headline
+    h2.line-thru 
+      span Hi, I'm special
 
     p
       | The same treatment might also be used to distinguish between two options.
 
     .bg-info.text-center Here's a thing
-    span.text-danger.text-center example of horizontal line thru "or"
+    p.line-thru 
+      span or
     .bg-info.text-center Here's another thing
 
 /* Tooltips */
@@ -534,6 +536,18 @@
   .col-md-8
     h3.subtle-underline Alerts and Popups
 
+.row
+  .col-md-12
+    h6 Alerts
+    .alert.alert-success.alert-dismissable
+      strong> Success! 
+      | Your mother <a href="#" class="alert-link">loves you</a>.
+    .alert.alert-danger 
+      strong> Danger! 
+      | You've been mean to your mother.
+    .alert.alert-info 
+      strong> Friendly reminder! 
+      | Don't forget to call home.
 
 /* just adding some space to the bottom for now
 p &nbsp;
