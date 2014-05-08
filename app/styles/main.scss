@@ -1,0 +1,53 @@
+$updater-cdn: 'https://updater-partners.s3.amazonaws.com/updater_new';
+
+@import 'globals/fonts';
+@import 'globals/variables';
+
+$icon-font-path: '/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/';
+
+@import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
+@import 'globals/type';
+@import 'components/tooltip';
+@import 'components/forms';
+@import 'components/buttons';
+@import 'components/icons';
+@import 'components/ribbons';
+@import 'components/lines';
+@import 'components/alerts';
+
+html {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: none;
+  font-smooth: always;
+}
+
+body {
+  letter-spacing: 1px;
+}
+
+.style-guide {
+  .header {
+    .nav-pills {
+      padding: 2em 0;
+    }
+  }
+}
+
+.swatch-wrap {
+  .swatch {
+    border: 1px solid $neutral-mid;
+    @include box-sizing(border-box);
+    width: 100%;
+    height: 100px;
+  }
+}
+
+.panel {
+  margin-bottom: 0;
+}
+
+.well {
+  margin-bottom: 0;
+}

@@ -1,103 +1,92 @@
-// ** RIBBON BOTH SIDES
-.ribbon {
+// ** RIBBONS!!!
+
+@mixin ribbon-span {
 	display: inline-block;
-
-	&:after, &:before {
-		content: "";
-		float: left;
-		border: 1.5em solid $blue-darker;
-	}
-
-	&:after { border-right-color: transparent; }
-	&:before { border-left-color: transparent; }
-
-	span {
-		color: $white;
-		background: $blue-darker;
-		display: inline-block;
-		line-height: 3em;
-		padding: 0 1em;
-		position: relative;
-		overflow: hidden;
-		float: left;
-
-		&:before, &:after {
-			content: "";
-			position: absolute;
-			top: 3em;
-		}
-
-		&:before { left: 0; }
-		&:after { right: 0; }
-
-	}
-
+	line-height: 3em;
+	position: relative;
+	overflow: hidden;
+	float: left;
 }
 
+$ribbons: ('green-dark', $green-dark, $white),
+	('blue-darker', $blue-darker, $white),
+	('yellow-mid', $yellow-mid, $neutral-dark),
+	('red-dark', $red-dark, $white);
 
-// ** RIBBON RIGHT SIDE ONLY
-.ribbon-right {
-	display: inline-block;
+@each $val in $ribbons {
 
-	&:after {
-		content: "";
-		float:left;
-		border:1.5em solid $yellow-mid;
-	}
+	$ribbonName: nth($val, 1);
+	$ribbonBackgroundColor: nth($val, 2);
+	$ribbonTextColor: nth($val, 3);
 
-	&:after { border-right-color: transparent; }
-
-	span {
-		color: $neutral-dark;
-		background: $yellow-mid;
+	.ribbon-#{$ribbonName} {
 		display: inline-block;
-		line-height: 3em;
-		padding: 0 1em 0 3em;
-		position: relative;
-		overflow: hidden;
-		float: left;
 
-		&:after {
-			content: "";
-			position: absolute;
-			top: 3em;
-			right: 0;
+		&.full-ribbon { // A ribbon on both sides
+			&:after, &:before {
+				content: "";
+				float: left;
+				border: 1.5em solid $ribbonBackgroundColor;
+			}
+			&:after { border-right-color: transparent; }
+			&:before { border-left-color: transparent; }
+			span {
+				@include ribbon-span;
+				padding: 0 1em;
+				color: $ribbonTextColor;
+				background: $ribbonBackgroundColor;
+				&:before { left: 0; }
+				&:after { right: 0; }
+				&:before, &:after {
+					content: "";
+					position: absolute;
+					top: 3em;
+				}
+			}
 		}
 
-	}
+		&.right-ribbon { // A ribbon with just a right trail
+			&:after {
+				content: "";
+				float: left;
+				border: 1.5em solid $ribbonBackgroundColor;
+			}
+			&:after { border-right-color: transparent; }
+			span {
+				@include ribbon-span;
+				padding: 0 1em 0 2.5em;
+				color: $ribbonTextColor;
+				background: $ribbonBackgroundColor;
+				&:after {
+					content: "";
+					position: absolute;
+					top: 3em;
+					right: 0;
+				}
+			}
+		}
 
-}
-
-
-// ** RIBBON LEFT SIDE ONLY
-.ribbon-left {
-	display: inline-block;
-
-	&:before {
-		content: "";
-		float: left;
-		border: 1.5em solid $green-dark;
-	}
-
-	&:before { border-left-color: transparent; }
-
-	span {
-		color: $white;
-		background: $green-dark;
-		display: inline-block;
-		line-height: 3em;
-		padding: 0 3em 0 1em;
-		position: relative;
-		overflow: hidden;
-		float: left;
-
-		&:before {
-			content: "";
-			position: absolute;
-			top: 3em;
-			left: 0;
+		&.left-ribbon { // A ribbon with just a left trail
+			&:before {
+				content: "";
+				float: left;
+				border: 1.5em solid $ribbonBackgroundColor;
+			}
+			&:before { border-left-color: transparent; }
+			span {
+				@include ribbon-span;
+				padding: 0 2.5em 0 1em;
+				color: $ribbonTextColor;
+				background: $ribbonBackgroundColor;
+				&:before {
+					content: "";
+					position: absolute;
+					top: 3em;
+					left: 0;
+				}
+			}
 		}
 
 	}
 
-}
+} // ends the ribbon generator loop!

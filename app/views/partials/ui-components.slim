@@ -360,18 +360,19 @@
     h6 Ribbons
     p
       | Ribbons are used as headlines or to draw attention to an area. They should used sparingly so the page doesn’t begin to look like a carnival.
-      h2.ribbon
+      h2.ribbon-green-dark.full-ribbon
         span I'm a big ribbon
       br
-      h4.ribbon
+      h4.ribbon-blue-darker.full-ribbon
         span I'm a medium ribbon
       br
-      h6.ribbon
+      h6.ribbon-green-dark.full-ribbon
         span I'm just a little ribbon
       br
-      h6.ribbon-right
+      h5.ribbon-yellow-mid.right-ribbon
         span Ribbon on right side only
-      h3.ribbon-left
+      br
+      h6.ribbon-red-dark.left-ribbon
         span Ribbon on left side only
 
 /* Horizontal lines */
@@ -381,16 +382,16 @@
     p
       | Sometimes, we'll employ the use of a headline with a 2px line going through it.
 
-    h2.line-thru 
+    h2.line-thru
       span Hi, I'm special
 
     p
       | The same treatment might also be used to distinguish between two options.
 
-    .bg-info.text-center Here's a thing
-    p.line-thru 
-      span or
-    .bg-info.text-center Here's another thing
+    .well.text-center Here's a thing
+    .line-thru
+      span.text-muted OR
+    .well.text-center Here's another thing
 
 /* Tooltips */
 .row
@@ -415,33 +416,40 @@
 .row
   .col-md-8
     .form-horizontal(role="form")
+
       .form-group
         label.col-sm-4.control-label(for="focusedInput") Focused input
         .col-sm-8
           input.form-control#focusedInput(type="text" value="This is focused...")
+
       .form-group
         label.col-sm-4.control-label(for="disabledInput") Disabled input
         .col-sm-8
           input.form-control#disabledInput(type="text" placeholder="This is disabled..." disabled)
+
       .form-group.has-warning.has-feedback
         label.col-sm-4.control-label(for="inputWarning") Input warning
         .col-sm-8
           input.form-control#inputWarning(type="text")
           span.glyphicon.glyphicon-warning-sign.form-control-feedback
+
       .form-group.has-error.has-feedback
         label.col-sm-4.control-label(for="inputError") Input error
         .col-sm-8
           input.form-control#inputError(type="text")
           span.glyphicon.glyphicon-remove.form-control-feedback
+
       .form-group.has-success.has-feedback
         label.col-sm-4.control-label(for="inputSuccess") Input success
         .col-sm-8
           input.form-control#inputSuccess(type="text")
           span.glyphicon.glyphicon-ok.form-control-feedback
+
       .form-group
         label.col-sm-4.control-label(for="inputLarge") Input large
         .col-sm-8
           input.input-lg.form-control#inputLarge(type="text" placeholder="It's a large input")
+
 
 /***** BUTTONS
 
@@ -503,13 +511,13 @@
   .col-md-12
     h6 Alerts
     .alert.alert-success.alert-dismissable
-      strong> Success! 
+      strong> Success!
       | Your mother <a href="#" class="alert-link">loves you</a>.
-    .alert.alert-danger 
-      strong> Danger! 
+    .alert.alert-danger
+      strong> Danger!
       | You've been mean to your mother.
-    .alert.alert-info 
-      strong> Friendly reminder! 
+    .alert.alert-info
+      strong> Friendly reminder!
       | Don't forget to call home.
 
 /* just adding some space to the bottom for now
