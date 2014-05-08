@@ -486,13 +486,6 @@
     button.btn.btn-primary.btn-sm>(type="button") Small button
     button.btn.btn-primary.btn-xs>(type="button") Mini button
 
-
-.row
-  .col-md-12
-    h6 Do we use these?
-    button.btn.btn-info>(type="button") Info
-    button.btn.btn-warning>(type="button") Warning
-
 /***** QUESTION MODULE
 
 .row
@@ -500,6 +493,7 @@
     h3.subtle-underline Question Module
     p
       | This box appears throughout the site at appropriate times to ask a user a question about their move. It should always inform the user why the question is being asked and how it will help them.
+    span.text-danger Question module with angry dog.
 
 /***** ALERTS AND POPUPS
 
@@ -511,14 +505,67 @@
   .col-md-12
     h6 Alerts
     .alert.alert-success.alert-dismissable
-      strong> Success!
-      | Your mother <a href="#" class="alert-link">loves you</a>.
-    .alert.alert-danger
-      strong> Danger!
-      | You've been mean to your mother.
-    .alert.alert-info
-      strong> Friendly reminder!
-      | Don't forget to call home.
+      button(type="button" class="close" data-dismiss="alert" aria-hidden="true")&times;
+      span.glyphicon.glyphicon-ok-circle>
+      | Success! Your mother <a href="#" class="alert-link">loves you</a>.
+    .alert.alert-danger 
+      button(type="button" class="close" data-dismiss="alert" aria-hidden="true")&times;
+      span.glyphicon.glyphicon-exclamation-sign>
+      | Danger! You've been mean to <a href="#" class="alert-link">your mother</a>.
+    .alert.alert-info 
+      button(type="button" class="close" data-dismiss="alert" aria-hidden="true")&times;
+      | Friendly reminder! Don't forget to <a href="#" class="alert-link">call home</a>.
+
+/***** ADDRESS MODULE
+
+.row
+  .col-md-8
+    h3.subtle-underline Address Module
+    p
+      | This box appears throughout the site any combination of a users old and/or new address, either pre-filled or with empty fields
+    span.text-danger Address modules galore
+
+/***** TABLES
+
+.row
+  .col-md-8
+    h3.subtle-underline Tables
+    p
+      | Tables are used for reporting in our admin tools and business pages
+    .table-responsive
+      table.table.table-striped
+        thead
+          tr
+            th Client's Name
+            th Email Address
+            th Invite Sent
+            th Invite Accepted
+        tbody
+          tr
+            td Steve Wozniak
+            td steve@thewoz.com
+            td 04/28/2014
+            td YES
+          tr
+            td Austin Griffith
+            td austin@thegrif.com
+            td scheduled
+            td -
+          tr
+            td James Franco
+            td james@thefranco.com
+            td scheduled
+            td -
+          tr
+            td Donna Choi
+            td donna@thechoi.com
+            td 04/28/2014
+            td NO
+          tr
+            td Gumby
+            td gumby@thegumbo.com
+            td 04/28/2014
+            td YES
 
 /* just adding some space to the bottom for now
 p &nbsp;
