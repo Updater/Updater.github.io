@@ -1,0 +1,103 @@
+// ** RIBBON BOTH SIDES
+.ribbon {
+	display: inline-block;
+
+	&:after, &:before {
+		content: "";
+		float: left;
+		border: 1.5em solid $blue-darker;
+	}
+
+	&:after { border-right-color: transparent; }
+	&:before { border-left-color: transparent; }
+
+	span {
+		color: $white;
+		background: $blue-darker;
+		display: inline-block;
+		line-height: 3em;
+		padding: 0 1em;
+		position: relative;
+		overflow: hidden;
+		float: left;
+
+		&:before, &:after {
+			content: "";
+			position: absolute;
+			top: 3em;
+		}
+
+		&:before { left: 0; }
+		&:after { right: 0; }
+
+	}
+
+}
+
+
+// ** RIBBON RIGHT SIDE ONLY
+.ribbon-right {
+	display: inline-block;
+
+	&:after {
+		content: "";
+		float:left;
+		border:1.5em solid $yellow-mid;
+	}
+
+	&:after { border-right-color: transparent; }
+
+	span {
+		color: $neutral-dark;
+		background: $yellow-mid;
+		display: inline-block;
+		line-height: 3em;
+		padding: 0 1em 0 3em;
+		position: relative;
+		overflow: hidden;
+		float: left;
+
+		&:after {
+			content: "";
+			position: absolute;
+			top: 3em;
+			right: 0;
+		}
+
+	}
+
+}
+
+
+// ** RIBBON LEFT SIDE ONLY
+.ribbon-left {
+	display: inline-block;
+
+	&:before {
+		content: "";
+		float: left;
+		border: 1.5em solid $green-dark;
+	}
+
+	&:before { border-left-color: transparent; }
+
+	span {
+		color: $white;
+		background: $green-dark;
+		display: inline-block;
+		line-height: 3em;
+		padding: 0 3em 0 1em;
+		position: relative;
+		overflow: hidden;
+		float: left;
+
+		&:before {
+			content: "";
+			position: absolute;
+			top: 3em;
+			left: 0;
+		}
+
+	}
+
+}

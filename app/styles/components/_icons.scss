@@ -1,0 +1,53 @@
+$updater-cdn: 'https://updater-partners.s3.amazonaws.com/updater_new';
+
+@mixin ico-size($size) {
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-position: center center;
+	width: $size;
+	height: $size;
+	background-size: $size $size;
+}
+
+@mixin ico-type($ico, $type) {
+	background-image: url('#{$updater-cdn}/ico-#{$ico}-#{$type}.svg');
+	.no-svg & {
+		background-image: url('#{$updater-cdn}/ico-#{$ico}-#{$type}.png');
+	}
+}
+
+// Add icons to the array
+
+@each $ico in
+	mail,
+	utilities,
+	cable,
+	deals
+	accounts,
+	sharemove {
+
+  .ico-#{$ico} {
+
+  	&.ico-large {
+    	@include ico-size(250px);
+    	@include ico-type($ico, large);
+  	}
+
+  	&.ico-medium {
+    	@include ico-size(150px);
+    	@include ico-type($ico, medium);
+  	}
+
+  	&.ico-small {
+    	@include ico-size(100px);
+    	@include ico-type($ico, small);
+  	}
+
+  	&.ico-tiny {
+    	@include ico-size(50px);
+    	@include ico-type($ico, tiny);
+  	}
+
+  }
+
+}
