@@ -1,18 +1,12 @@
 $updater-cdn: 'https://updater-partners.s3.amazonaws.com/updater_new';
 
-@mixin icon-name($icon-name) {
-  background-image: url("#{$updater-cdn}/#{$icon-name}.svg");
+@mixin ico-size($size) {
+  display: inline-block;
   background-repeat: no-repeat;
   background-position: center center;
-  .no-svg & {
-    background-image: url("#{$icon-name}.png");
-  }
-}
-
-@mixin icon-size($size) {
+  background-size: $size $size;
 	width: $size;
 	height: $size;
-	background-size: $size $size;
 }
 
 @mixin ico-type($ico, $type) {

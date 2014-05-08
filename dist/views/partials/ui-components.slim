@@ -37,10 +37,10 @@
     p.tiny
       strong> I am tiny text.
       | I am mighty and often contain important information. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula. Sed iaculis risus sit amet ligula adipiscing porttitor et ut enim. Phasellus sed pretium lorem, in venenatis turpis. Integer ut mattis eros.
-
   .col-md-4
     blockquote
       | I am a block quote. I love being blocky. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula.
+
 
 /* Headers */
 .row
@@ -194,24 +194,41 @@
 
 /* Updater Icons */
 .row
-  .col-md-12
+  .col-md-8
     h6 Updater-Brand
     p
       strong> Iconography is a fundamental part of our messaging.
       | Our Updater-branded icons are responsive and used across our website, emails, and partner sites.
 .row
+  .col-md-4
+    h6 Large
+    .ico-mail.ico-large
   .col-md-3
-    span.text-danger large icon goes here
+    h6 Medium
+    .ico-mail.ico-medium
+  .col-md-2
+    h6 Small
+    .ico-mail.ico-small
+  .col-md-1
+    h6 Tiny
+    .ico-mail.ico-tiny
+.row
+  .col-md-4
+    h6 Large
+    .ico-utilities.ico-large
   .col-md-3
-    span.text-danger medium icon goes here
-  .col-md-3
-    span.text-danger small icon goes here
-  .col-md-3
-    span.text-danger smallest icon goes here
+    h6 Medium
+    .ico-utilities.ico-medium
+  .col-md-2
+    h6 Small
+    .ico-utilities.ico-small
+  .col-md-1
+    h6 Tiny
+    .ico-utilities.ico-tiny
 
 /* Branded Icons */
 .row
-  .col-md-12
+  .col-md-8
     h6 Branded Icons
     p In the event that a partner demands a bespoke end-user experience, we use these icons.
 .row
@@ -385,12 +402,20 @@
   .col-md-8
     h6 Ribbons
     p
-      | Ribbons are fun elements sometimes used as headlines or to draw attention to an area. You can use any of the background class mixins with them with .ribbon-* prepended, and you can put just about anything in them (you shouldn’t though). Their use should be kept to a minimum so your page doesn’t start to look like a carnival.
-    p.bg-success.text-center I'm a big ribbon
-    p.bg-success.text-center I'm medium-sized
-    p.bg-success.text-center I'm just a little ribbon
-    p.bg-success.text-center I'm a little ribbon with a right side only
-    p.bg-success.text-center I'm a little ribbon with a left side only
+      | Ribbons are used as headlines or to draw attention to an area. They should used sparingly so the page doesn’t begin to look like a carnival.
+      h2.ribbon
+        span I'm a big ribbon
+      br
+      h4.ribbon
+        span I'm a medium ribbon
+      br
+      h6.ribbon
+        span I'm just a little ribbon
+      br
+      h6.ribbon-right
+        span Ribbon on right side only
+      h3.ribbon-left
+        span Ribbon on left side only
 
 /* Horizontal lines */
 .row
@@ -430,25 +455,27 @@
 /* Form Examples */
 .row
   .col-md-8
-    .form-group
-      label.control-label(for="focusedInput") Focused input
-      input.form-control#focusedInput(type="text" value="This is focused...")
-
-    .form-group
-      label.control-label(for="disabledInput") Disabled input
-      input.form-control#disabledInput(type="text" placeholder="This is disabled..." disabled)
-
-    .form-group.has-warning
-      label.control-label(for="inputWarning") Input warning
-      input.form-control#inputWarning(type="text")
-
-    .form-group.has-error
-      label.control-label(for="inputError") Input error
-      input.form-control#inputError(type="text")
-
-    .form-group.has-success
-      label.control-label(for="inputLarge") Input success
-      input.form-control#focusedInput(type="text")
+    .form-horizontal(role="form")
+      .form-group
+        label.col-sm-4.control-label(for="focusedInput") Focused input
+        .col-sm-8
+          input.form-control#focusedInput(type="text" value="This is focused...")
+      .form-group
+        label.col-sm-4.control-label(for="disabledInput") Disabled input
+        .col-sm-8
+          input.form-control#disabledInput(type="text" placeholder="This is disabled..." disabled)
+      .form-group.has-warning
+        label.col-sm-4.control-label(for="inputWarning") Input warning
+        .col-sm-8
+          input.form-control#inputWarning(type="text")
+      .form-group.has-error
+        label.col-sm-4.control-label(for="inputError") Input error
+        .col-sm-8
+          input.form-control#inputError(type="text")
+      .form-group.has-success
+        label.col-sm-4.control-label(for="inputSuccess") Input success
+        .col-sm-8
+          input.form-control#inputSuccess(type="text")
 
 
 /***** BUTTONS
@@ -493,6 +520,19 @@
     button.btn.btn-info>(type="button") Info
     button.btn.btn-warning>(type="button") Warning
 
+/***** QUESTION MODULE
+
+.row
+  .col-md-8
+    h3.subtle-underline Question Module
+    p
+      | This box appears throughout the site at appropriate times to ask a user a question about their move. It should always inform the user why the question is being asked and how it will help them.
+
+/***** ALERTS AND POPUPS
+
+.row
+  .col-md-8
+    h3.subtle-underline Alerts and Popups
 
 
 /* just adding some space to the bottom for now
