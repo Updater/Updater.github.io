@@ -109,79 +109,36 @@
 
 /* Blues */
 .row
-  .col-sm-2
-    .swatch-card #2b7499
-  .col-sm-2
-    .swatch-card #5590ad
-  .col-sm-2
-    .swatch-card #80acc2
-  .col-sm-2
-    .swatch-card #aac7d6
-  .col-sm-2
-    .swatch-card #d5e3eb
-  .col-sm-2
-    .swatch-card #f3fcff
+  .col-sm-2.swatch-wrap(ng-repeat="blueSwatch in blueSwatches")
+    .swatch(style="background-color: \#{{blueSwatch.color}}")
+    p.text-muted.small.text-center \#{{blueSwatch.color}}
 
 /* Greens */
 .row
-  .col-sm-2
-    .swatch-card #56b784
-  .col-sm-2
-    .swatch-card #75c79b
-  .col-sm-2
-    .swatch-card #92d7b2
-  .col-sm-2
-    .swatch-card #b1e7c9
-  .col-sm-2
-    .swatch-card #e3f4eb
-  .col-sm-2
-    .swatch-card #f4fbf7
+  .col-sm-2.swatch-wrap(ng-repeat="greenSwatch in greenSwatches")
+    .swatch(style="background-color: \#{{greenSwatch.color}}")
+    p.text-muted.small.text-center \#{{greenSwatch.color}}
 
 /* Reds */
 .row
-  .col-sm-2
-    .swatch-card #f84e57
-  .col-sm-2
-    .swatch-card #f97179
-  .col-sm-2
-    .swatch-card #fb959a
-  .col-sm-2
-    .swatch-card #fcb8bc
-  .col-sm-2
-    .swatch-card #fee8e9
+  .col-sm-2.swatch-wrap(ng-repeat="redSwatch in redSwatches")
+    .swatch(style="background-color: \#{{redSwatch.color}}")
+    p.text-muted.small.text-center \#{{redSwatch.color}}
 
 /* Yellows */
 .row
-  .col-sm-2
-    .swatch-card #ffe98f
-  .col-sm-2
-    .swatch-card #ffefad
-  .col-sm-2
-    .swatch-card #fff7db
-  .col-sm-2
-    .swatch-card #fffcec
-  .col-sm-2
-    .swatch-card #fffdf5
+  .col-sm-2.swatch-wrap(ng-repeat="yellowSwatch in yellowSwatches")
+    .swatch(style="background-color: \#{{yellowSwatch.color}}")
+    p.text-muted.small.text-center \#{{yellowSwatch.color}}
 
-/* Grays */
+/* Neutrals */
 .row
   .col-md-12
     h6 Neutrals
 .row
-  .col-sm-2
-    .swatch-card #404041
-  .col-sm-2
-    .swatch-card #666667
-  .col-sm-2
-    .swatch-card #8c8c8d
-  .col-sm-2
-    .swatch-card #bababb
-  .col-sm-2
-    .swatch-card #d9d9d9
-  .col-sm-2
-    .swatch-card #efefef
-  .col-sm-2
-    .swatch-card #f5f5f5
+  .col-sm-2.swatch-wrap(ng-repeat="neutralSwatch in neutralSwatches")
+    .swatch(style="background-color: \#{{neutralSwatch.color}}")
+    p.text-muted.small.text-center \#{{neutralSwatch.color}}
 
 
 /***** ICONS
@@ -466,19 +423,25 @@
         label.col-sm-4.control-label(for="disabledInput") Disabled input
         .col-sm-8
           input.form-control#disabledInput(type="text" placeholder="This is disabled..." disabled)
-      .form-group.has-warning
+      .form-group.has-warning.has-feedback
         label.col-sm-4.control-label(for="inputWarning") Input warning
         .col-sm-8
           input.form-control#inputWarning(type="text")
-      .form-group.has-error
+          span.glyphicon.glyphicon-warning-sign.form-control-feedback
+      .form-group.has-error.has-feedback
         label.col-sm-4.control-label(for="inputError") Input error
         .col-sm-8
           input.form-control#inputError(type="text")
-      .form-group.has-success
+          span.glyphicon.glyphicon-remove.form-control-feedback
+      .form-group.has-success.has-feedback
         label.col-sm-4.control-label(for="inputSuccess") Input success
         .col-sm-8
           input.form-control#inputSuccess(type="text")
-
+          span.glyphicon.glyphicon-ok.form-control-feedback
+      .form-group
+        label.col-sm-4.control-label(for="inputLarge") Input large
+        .col-sm-8
+          input.input-lg.form-control#inputLarge(type="text" placeholder="It's a large input")
 
 /***** BUTTONS
 

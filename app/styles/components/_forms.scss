@@ -17,6 +17,10 @@ fieldset {
   min-width: 0;
 }
 
+input {
+  letter-spacing: 1px;
+}
+
 legend {
   display: block;
   width: 100%;
@@ -269,9 +273,9 @@ input[type="checkbox"],
 // Build on `.form-control` with modifier classes to decrease or increase the
 // height and font-size of form controls.
 
-@include input-size('.input-sm', $input-height-small, $padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, $border-radius-small);
+@include input-size('.input-sm', $input-height-small, $padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, none);
 
-@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, $border-radius-large);
+@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, none);
 
 
 // Form control feedback states
@@ -312,13 +316,13 @@ input[type="checkbox"],
 
 // Feedback states
 .has-success {
-  @include form-control-validation($state-success-text, $state-success-text, $state-success-bg);
+  @include form-control-validation($state-success-text, $neutral-lighter, $state-success-bg);
 }
 .has-warning {
-  @include form-control-validation($state-warning-text, $state-warning-text, $state-warning-bg);
+  @include form-control-validation($state-warning-text, $neutral-lighter, $state-warning-bg);
 }
 .has-error {
-  @include form-control-validation($state-danger-text, $state-danger-text, $state-danger-bg);
+  @include form-control-validation($state-danger-text, $neutral-lighter, $state-danger-bg);
 }
 
 
