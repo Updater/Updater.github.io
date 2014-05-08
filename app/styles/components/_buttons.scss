@@ -54,12 +54,40 @@
   }
 }
 
-
 // Alternate buttons
 // --------------------------------------------------
 
 .btn-default {
-  @include button-variant($btn-default-color, $btn-default-bg, $btn-default-border);
+  color: $blue-darker;
+  background-color: $white;
+  border-color: $blue-mid;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: darken($blue-darker, 12%);
+    background-color: $blue-lightest;
+    border-color: $blue-dark;
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: $white;
+      border-color: $blue-light;
+    }
+  }
 }
 .btn-primary {
   @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
@@ -77,8 +105,38 @@
   @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
 }
 // Danger and error appear as red
-.btn-danger, .btn-cancel {
-  @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+
+.btn-danger {
+  color: $red-darker;
+  background-color: $white;
+  border-color: $red-darker;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    color: darken($red-darker, 12%);
+    background-color: $red-lighter;
+    border-color: $red-darker;
+  }
+  &:active,
+  &.active,
+  .open > &.dropdown-toggle {
+    background-image: none;
+  }
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    &,
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: $white;
+      border-color: $red-light;
+    }
+  }
 }
 
 

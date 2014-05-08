@@ -1,9 +1,15 @@
 $updater-cdn: 'https://updater-partners.s3.amazonaws.com/updater_new';
 
-@mixin ico-size($size) {
-	display: inline-block;
-	background-repeat: no-repeat;
-	background-position: center center;
+@mixin icon-name($icon-name) {
+  background-image: url("#{$updater-cdn}/#{$icon-name}.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  .no-svg & {
+    background-image: url("#{$icon-name}.png");
+  }
+}
+
+@mixin icon-size($size) {
 	width: $size;
 	height: $size;
 	background-size: $size $size;
@@ -49,5 +55,4 @@ $updater-cdn: 'https://updater-partners.s3.amazonaws.com/updater_new';
   	}
 
   }
-
 }

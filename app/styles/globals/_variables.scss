@@ -177,9 +177,9 @@ $table-border-color:            #ddd;
 
 $btn-font-weight:                200;
 
-$btn-default-color:              $gray-dark;
-$btn-default-bg:                 #e7e7e7;
-$btn-default-border:             #dadada;
+$btn-default-color:              $blue-darker;
+$btn-default-bg:                 $white;
+$btn-default-border:             $blue-mid;
 
 $btn-primary-color:              $white;
 $btn-primary-bg:                 $brand-primary;
@@ -197,9 +197,9 @@ $btn-warning-color:              $white;
 $btn-warning-bg:                 $brand-warning;
 $btn-warning-border:             darken($btn-warning-bg, 5%);
 
-$btn-danger-color:               $white;
-$btn-danger-bg:                  $brand-danger;
-$btn-danger-border:              darken($btn-danger-bg, 5%);
+$btn-danger-color:               $red-darker;
+$btn-danger-bg:                  $white;
+$btn-danger-border:              $red-darker;
 
 $btn-link-disabled-color:        $gray-light;
 
