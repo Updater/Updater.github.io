@@ -169,6 +169,7 @@
   .col-md-1
     h6 Tiny
     .ico-mail.ico-tiny
+
 .row
   .col-md-4
     h6 Large
@@ -359,7 +360,7 @@
   .col-md-8
     h6 Ribbons
     p
-      | Ribbons are used as headlines or to draw attention to an area. They should used sparingly so the page doesn’t begin to look like a carnival.
+      | Ribbons are single-line statements used as headlines or to draw attention to an area. They should used sparingly so the page doesn’t begin to look like a carnival.
       h2.ribbon-green-dark.full-ribbon
         span I'm a big ribbon
       br
@@ -450,6 +451,14 @@
         .col-sm-8
           input.input-lg.form-control#inputLarge(type="text" placeholder="It's a large input")
 
+      .form-group
+        label.col-sm-4.control-label(for="exampleSwitch") On / Off Switch
+        .col-sm-8
+          .onoffswitch
+            input.onoffswitch-checkbox#exampleswitch(type="checkbox" checked)
+              label.onoffswitch-label(for="exampleswitch")
+                .onoffswitch-inner
+                .onoffswitch-switch
 
 /***** BUTTONS
 
@@ -508,11 +517,11 @@
       button(type="button" class="close" data-dismiss="alert" aria-hidden="true")&times;
       span.glyphicon.glyphicon-ok-circle>
       | Success! Your mother <a href="#" class="alert-link">loves you</a>.
-    .alert.alert-danger 
+    .alert.alert-danger
       button(type="button" class="close" data-dismiss="alert" aria-hidden="true")&times;
       span.glyphicon.glyphicon-exclamation-sign>
       | Danger! You've been mean to <a href="#" class="alert-link">your mother</a>.
-    .alert.alert-info 
+    .alert.alert-info
       button(type="button" class="close" data-dismiss="alert" aria-hidden="true")&times;
       | Friendly reminder! Don't forget to <a href="#" class="alert-link">call home</a>.
 
@@ -523,12 +532,33 @@
     h3.subtle-underline Address Module
     p
       | This box appears throughout the site any combination of a users old and/or new address, either pre-filled or with empty fields
-    span.text-danger Address modules galore
+.row
+  .col-md-6
+    .address-box-old
+      .address-label old address
+      .address-top-row
+        input.input-lg.address(placeholder="street address")
+        input.input-lg.apt-no(placeholder="apt")
+      div
+        input.input-lg.city(placeholder="city")
+        input.input-lg.state(placeholder="state")
+        input.input-lg.zip(placeholder="zip")
+    .address-box-new
+      .address-label new address
+      .address-top-row
+        input.input-lg.address(placeholder="street address")
+        input.input-lg.apt-no(placeholder="apt")
+      div
+        input.input-lg.city(placeholder="city")
+        input.input-lg.state(placeholder="state")
+        input.input-lg.zip(placeholder="zip")
+    button.btn.btn-primary.btn-lg.pull-right Get started
+
 
 /***** TABLES
 
 .row
-  .col-md-8
+  .col-md-12
     h3.subtle-underline Tables
     p
       | Tables are used for reporting in our admin tools and business pages
@@ -566,6 +596,7 @@
             td gumby@thegumbo.com
             td 04/28/2014
             td YES
+
 
 /* just adding some space to the bottom for now
 p &nbsp;

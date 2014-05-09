@@ -1,3 +1,4 @@
+//**** REGULAR ICONS - must specify size class when using
 @mixin ico-size($size) {
   display: inline-block;
   background-repeat: no-repeat;
@@ -45,6 +46,43 @@
     	@include ico-size(50px);
     	@include ico-type($ico, tiny);
   	}
+
+  }
+}
+
+
+// RESPONSIVE ICONS - adapt to screen size
+
+@each $responsive-ico in
+  mail,
+  utilities,
+  cable,
+  deals
+  accounts,
+  sharemove {
+
+  .ico-#{$responsive-ico} {
+
+    &.ico-responsive {
+
+      @media (min-width: $screen-md) {
+        @include ico-size(250px);
+        @include ico-type($responsive-ico, large);
+      }
+      @media (max-width: $screen-md-max) {
+        @include ico-size(150px);
+        @include ico-type($responsive-ico, medium);
+      }
+      @media (max-width: $screen-sm-max) {
+        @include ico-size(100px);
+        @include ico-type($responsive-ico, small);
+      }
+      @media (max-width: $screen-xs-max) {
+        @include ico-size(50px);
+        @include ico-type($responsive-ico, tiny);
+      }
+
+    }
 
   }
 }

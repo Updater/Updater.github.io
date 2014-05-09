@@ -7,6 +7,7 @@ $icon-font-path: '/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 
 @import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
 @import 'globals/type';
+@import 'globals/scaffolding';
 @import 'components/tooltip';
 @import 'components/forms';
 @import 'components/buttons';
@@ -14,6 +15,7 @@ $icon-font-path: '/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 @import 'components/ribbons';
 @import 'components/lines';
 @import 'components/alerts';
+@import 'components/addressbox';
 
 html {
   -webkit-tap-highlight-color: transparent;

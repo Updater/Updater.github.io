@@ -1,0 +1,151 @@
+@function invert-location($location) {
+  @if $location == left {
+    @return right;
+  }
+  @elseif $location == right {
+    @return left;
+  }
+  @elseif $location == top {
+    @return bottom;
+  }
+  @elseif $location == bottom {
+    @return top;
+  }
+}
+
+// Gets the start position left on horizontal and top on vertical
+@function position-start($location) {
+  @if $location == top or $location == bottom {
+    @return left;
+  }
+  @else {
+    @return top;
+  }
+}
+
+// Gets the end position right on horizontal and bottom on vertical
+@function position-end($location) {
+  @if $location == top or $location == bottom {
+    @return right;
+  }
+  @else {
+    @return bottom;
+  }
+}
+
+// Decides if size needs to be height or width based on horizontal or vertical
+@function size-property($location) {
+  @if $location == top or $location == bottom {
+    @return width;
+  }
+  @else {
+    @return height;
+  }
+}
+
+@mixin negative-css-triangle($location: top, $position: 50%, $size: 10px, $color: black) {
+  &:before, &:after {
+    box-sizing: border-box;
+    content: "";
+    display: block;
+    position: absolute;
+    #{$location}: -$size * 2;
+    border: $size solid transparent;
+  }
+
+  &:before {
+    #{position-start($location)}: 0;
+    #{size-property($location)}: $position;
+    border-#{position-start($location)}: none;
+    border-#{invert-location($location)}-color: $color;
+  }
+
+  &:after {
+    #{position-end($location)}: 0;
+    #{size-property($location)}: 100% - $position;
+    border-#{position-end($location)}: none;
+    border-#{invert-location($location)}-color: $color;
+  }
+}
+
+.address-label { // common styling for the new and old address label
+	font-size: $font-size-h6;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	margin-bottom: 5px;
+}
+.address-top-row {
+	margin-bottom: 2px;
+}
+
+.address-box-old {
+	position: relative;
+	border-radius: 5px 5px 0 0;
+	padding: 10px 20px 20px;
+	margin-bottom: 15px;
+	background: $blue-light;
+
+	.address-label {
+		color: $blue-dark;
+		margin: 10px 0 15px;
+	}
+
+	input {
+		border: none;
+
+		&.address { width: 80%; border-right: 2px solid $blue-light; }
+		&.apt-no { width: 20%; }
+		&.city { width: 40%; border-right: 2px solid $blue-light; }
+		&.state { width: 30%; border-right: 2px solid $blue-light; }
+		&.zip { width: 30%; }
+
+	}
+
+	&:after {
+		top: 100%;
+		left: 50%;
+		border: solid transparent;
+		content: " ";
+		height: 0;
+		width: 0;
+		position: absolute;
+		pointer-events: none;
+		border-color: transparent;
+		border-top-color: $blue-light;
+		border-width: 8px;
+		margin-left: -8px;
+	}
+}
+
+
+.address-box-new {
+	position: relative;
+	border-radius: 0 0 5px 5px;
+	padding: 10px 20px 20px;
+	margin-bottom: 10px;
+	background: $blue-mid;
+
+	.address-label {
+		color: $blue-lightest;
+		margin-bottom: 15px;
+	}
+
+	input {
+		border: none;
+
+		&.address { width: 80%; border-right: 2px solid $blue-mid; }
+		&.apt-no { width: 20%; }
+		&.city { width: 40%; border-right: 2px solid $blue-mid; }
+		&.state { width: 30%; border-right: 2px solid $blue-mid; }
+		&.zip { width: 30%; }
+
+	}
+
+	@include negative-css-triangle(top, 50%, 10px, $blue-mid);
+
+}
+
+
+
+
+

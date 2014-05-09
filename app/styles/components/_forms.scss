@@ -19,6 +19,7 @@ fieldset {
 
 input {
   letter-spacing: 1px;
+  outline: 0;
 }
 
 legend {
@@ -273,9 +274,9 @@ input[type="checkbox"],
 // Build on `.form-control` with modifier classes to decrease or increase the
 // height and font-size of form controls.
 
-@include input-size('.input-sm', $input-height-small, $padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, none);
+@include input-size('.input-sm', $input-height-small, $padding-small-vertical, $padding-small-horizontal, $font-size-small, $line-height-small, 0);
 
-@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, none);
+@include input-size('.input-lg', $input-height-large, $padding-large-vertical, $padding-large-horizontal, $font-size-large, $line-height-large, 0);
 
 
 // Form control feedback states
@@ -482,3 +483,79 @@ input[type="checkbox"],
     right: ($grid-gutter-width / 2);
   }
 }
+
+
+// On Off switch used for controlling preferences
+$onoffswitch: 'onoffswitch';
+
+.#{$onoffswitch} {
+  line-height: 1;
+  position: relative;
+  width: 90px;
+  margin-bottom: 0;
+  @include user-select(none);
+}
+
+.#{$onoffswitch}-checkbox {
+    display: none;
+}
+
+.#{$onoffswitch}-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border: 1px solid $blue-mid;
+    border-radius: 5px;
+    margin-bottom: 0;
+}
+
+.#{$onoffswitch}-inner {
+  width: 200%;
+  margin-left: -100%;
+  @include transition(margin 0.3s ease-in 0s);
+
+  &:before, &:after {
+    float: left;
+    width: 50%;
+    height: 42px;
+    padding: 0;
+    line-height: 42px;
+    font-size: $font-size-small;
+    color: $white;
+    @include box-sizing(border-box);
+  }
+  &:before {
+    content: "ON";
+    padding-left: 10px;
+    background-color: $blue-lightest;
+    color: $blue-darker;
+  }
+  &:after {
+    content: "OFF";
+    padding-right: 10px;
+    background-color: $white;
+    color: $gray-dark;
+    text-align: right;
+  }
+}
+
+.#{$onoffswitch}-switch {
+  width: 20px;
+  margin: 6px;
+  background: $blue-darker;
+  border-radius: 3px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 56px;
+  @include transition(all 0.3s ease-in 0s);
+}
+
+.#{$onoffswitch}-checkbox:checked + .#{$onoffswitch}-label .#{$onoffswitch}-inner {
+  margin-left: 0;
+}
+
+.#{$onoffswitch}-checkbox:checked + .#{$onoffswitch}-label .#{$onoffswitch}-switch {
+  right: 0;
+}
+
