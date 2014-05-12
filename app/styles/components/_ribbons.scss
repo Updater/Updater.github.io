@@ -8,10 +8,14 @@
 	float: left;
 }
 
-$ribbons: ('green-dark', $green-dark, $white),
+$ribbons: ('green-darker', $green-darker, $white),
+	('green-lighter', $green-lighter, $neutral-darker),
 	('blue-darker', $blue-darker, $white),
-	('yellow-mid', $yellow-mid, $neutral-dark),
-	('red-dark', $red-dark, $white);
+	('blue-lighter', $blue-lighter, $neutral-darker),
+	('red-darker', $red-darker, $white),
+	('red-lighter', $red-lighter, $neutral-darker),
+	('yellow-darker', $yellow-darker, $neutral-darker),
+	('yellow-mid', $yellow-mid, $neutral-darker);
 
 @each $val in $ribbons {
 
