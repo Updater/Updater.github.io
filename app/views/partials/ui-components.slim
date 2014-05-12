@@ -416,6 +416,26 @@ br
     javascript:
       $('#tooltipexample').tooltip();
 
+/* Tooltips */
+.row
+  .col-md-8
+    h6 Modals
+    p
+      | We use modals to collect information from the user only when they shouldn't be able to continue without providing it (i.e. "Set a password so we can save your place")
+
+    button.btn.btn-default(data-toggle="modal" data-target=".modal-example") Launch a modal
+
+    javascript:
+      $('#modalexample').modal();
+
+.modal.fade.modal-example(tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true")
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        button.close(type="button" data-dismiss="modal" aria-hidden="true") x
+        h4.modal-title#exampleLargeModalLabel It's a modal!
+      .modal-body
+        | Hooray! You launched me!
 
 /***** FORMS
 
@@ -470,6 +490,22 @@ br
                 .onoffswitch-inner
                 .onoffswitch-switch
 
+      .form-group
+        label.col-sm-4.control-label Radio Buttons
+        .col-sm-8.radio
+          input>(type="radio" id="this1" name="thisorthat" checked)
+          label(for="this1") This
+          input>(type="radio" id="that1" name="thisorthat")                
+          label(for="that1") Or that
+
+      .form-group
+        label.col-sm-4.control-label Checkbox
+        .col-sm-8.checkbox
+          input>(type="checkbox" id="this2" name="petscheck" checked)
+          label(for="this2") This
+          input>(type="checkbox" id="that2" name="petscheck")                
+          label(for="that2") And that?
+
 /***** BUTTONS
 
 .row
@@ -512,7 +548,34 @@ br
     h3.subtle-underline Question Module
     p
       | This box appears throughout the site at appropriate times to ask a user a question about their move. It should always inform the user why the question is being asked and how it will help them.
-    span.text-danger Question module with angry dog.
+    
+.row
+  .col-md-12
+    .question-module
+
+      .row
+        .col-xs-3.hidden-xs
+          img.img-responsive(src="https://updater-partners.s3.amazonaws.com/updater_new/ico-dog-large.svg")
+        .col-sm-9
+            /h6.ribbon-green-lighter.right-ribbon.hidden-xs
+              /span Moving with furry friends
+            h6.subtle-underline.hidden-xs
+              | Moving with furry friends
+            .question-title Are you moving with dogs or cats?
+            p.small Let us know if you are moving with pets. Chances are, we can help you save money on pet food and supplies.
+            form.form-inline(role="form")
+              .form-group.radio
+                input>(type="radio" id="dogsradio" name="petsradio" checked)
+                label(for="dogsradio") Dog(s)
+                input>(type="radio" id="catsradio" name="petsradio")                
+                label(for="catsradio") Cat(s)
+                input>(type="radio" id="bothradio" name="petsradio")
+                label(for="bothradio") Both
+
+      .row
+        .col-md-12.question-submit
+          button.pull-left.btn.btn-default(type="button") Skip
+          button.pull-right.btn.btn-primary(type="submit") Submit Answer
 
 /***** ALERTS AND POPUPS
 
@@ -543,25 +606,25 @@ br
     p
       | This box appears throughout the site any combination of a users old and/or new address, either pre-filled or with empty fields
 .row
-  .col-md-6
+  .col-sm-6
     .address-box-old
       .address-label old address
       .address-top-row
-        input.input-lg.address(placeholder="street address")
-        input.input-lg.apt-no(placeholder="apt")
+        input.form-control.address(type="text" placeholder="street address")
+        input.form-control.apt-no(type="text" placeholder="apt")
       div
-        input.input-lg.city(placeholder="city")
-        input.input-lg.state(placeholder="state")
-        input.input-lg.zip(placeholder="zip")
+        input.form-control.city(type="text" placeholder="city")
+        input.form-control.state(type="text" placeholder="state")
+        input.form-control.zip(type="text" placeholder="zip")
     .address-box-new
       .address-label new address
       .address-top-row
-        input.input-lg.address(placeholder="street address")
-        input.input-lg.apt-no(placeholder="apt")
+        input.form-control.address(type="text" placeholder="street address")
+        input.form-control.apt-no(type="text" placeholder="apt")
       div
-        input.input-lg.city(placeholder="city")
-        input.input-lg.state(placeholder="state")
-        input.input-lg.zip(placeholder="zip")
+        input.form-control.city(type="text" placeholder="city")
+        input.form-control.state(type="text" placeholder="state")
+        input.form-control.zip(type="text" placeholder="zip")
     button.btn.btn-primary.btn-lg.pull-right Get started
 
 

@@ -1,3 +1,7 @@
+// Font Awesome
+@import 'globals/fontawesome/font-awesome';
+$fontawesome: 'FontAwesome';
+
 //== Updater Colors
 //
 
@@ -867,3 +871,11 @@ $page-header-border-color: $hr-border;
 
 //** Horizontal offset for forms and lists.
 $component-offset-horizontal: 180px;
+
+@mixin tab-focus() {
+  // Default
+  outline: 0;
+  // WebKit
+  outline: 0;
+  outline-offset: 0
+}

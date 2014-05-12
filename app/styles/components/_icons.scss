@@ -8,7 +8,14 @@
 	height: $size;
 }
 
-@mixin ico-type($ico, $type) {
+@mixin ico-fixed-path($fixed-ico) {
+  background-image: url('#{$updater-cdn}/ico-#{$fixed-ico}-large.svg');
+  .no-svg & {
+    background-image: url('#{$updater-cdn}/ico-#{$fixed-ico}-large.png');
+  }
+}
+
+@mixin ico-responsive-path($ico, $type) {
 	background-image: url('#{$updater-cdn}/ico-#{$ico}-#{$type}.svg');
 	.no-svg & {
 		background-image: url('#{$updater-cdn}/ico-#{$ico}-#{$type}.png');
@@ -17,34 +24,35 @@
 
 // Add icons to the array
 
-@each $ico in
-	mail,
-	utilities,
-	cable,
-	deals
-	accounts,
-	sharemove {
+@each $fixed-ico in
+  mail,
+  utilities,
+  cable,
+  deals,
+  accounts,
+  sharemove,
+  dog {
 
-  .ico-#{$ico} {
+  .ico-#{$fixed-ico} {
 
   	&.ico-large {
     	@include ico-size(250px);
-    	@include ico-type($ico, large);
+    	@include ico-fixed-path($fixed-ico);
   	}
 
   	&.ico-medium {
     	@include ico-size(150px);
-    	@include ico-type($ico, medium);
+    	@include ico-fixed-path($fixed-ico);
   	}
 
   	&.ico-small {
     	@include ico-size(100px);
-    	@include ico-type($ico, small);
+    	@include ico-fixed-path($fixed-ico);
   	}
 
   	&.ico-tiny {
     	@include ico-size(50px);
-    	@include ico-type($ico, tiny);
+    	@include ico-fixed-path($fixed-ico);
   	}
 
   }
@@ -57,7 +65,7 @@
   mail,
   utilities,
   cable,
-  deals
+  deals,
   accounts,
   sharemove {
 
@@ -67,22 +75,24 @@
 
       @media (min-width: $screen-md) {
         @include ico-size(250px);
-        @include ico-type($responsive-ico, large);
+        @include ico-responsive-path($responsive-ico, large);
       }
       @media (max-width: $screen-md-max) {
         @include ico-size(150px);
-        @include ico-type($responsive-ico, medium);
+        @include ico-responsive-path($responsive-ico, medium);
       }
       @media (max-width: $screen-sm-max) {
         @include ico-size(100px);
-        @include ico-type($responsive-ico, small);
+        @include ico-responsive-path($responsive-ico, small);
       }
       @media (max-width: $screen-xs-max) {
         @include ico-size(50px);
-        @include ico-type($responsive-ico, tiny);
+        @include ico-responsive-path($responsive-ico, tiny);
       }
 
     }
 
   }
 }
+
+

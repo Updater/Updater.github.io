@@ -17,6 +17,7 @@ $icon-font-path: '/bower_components/bootstrap-sass-official/vendor/assets/fonts/
 @import 'components/alerts';
 @import 'components/addressbox';
 @import 'components/misc';
+@import 'components/questions';
 
 html {
   -webkit-tap-highlight-color: transparent;
@@ -28,6 +29,11 @@ html {
 
 body {
   letter-spacing: 1px;
+}
+
+*:focus {
+  outline: none !important;
+  -webkit-appearance: none;
 }
 
 .style-guide {

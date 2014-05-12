@@ -83,20 +83,22 @@
 	border-radius: 5px 5px 0 0;
 	padding: 10px 20px 20px;
 	margin-bottom: 15px;
-	background: $blue-light;
+	background: $blue-lighter;
 
 	.address-label {
-		color: $blue-dark;
+		color: $blue-darker;
 		margin: 10px 0 15px;
 	}
 
 	input {
+		display: inline-block;
 		border: none;
+		@include box-sizing(border-box);
 
-		&.address { width: 80%; border-right: 2px solid $blue-light; }
+		&.address { width: 80%; border-right: 2px solid $blue-lighter; }
 		&.apt-no { width: 20%; }
-		&.city { width: 40%; border-right: 2px solid $blue-light; }
-		&.state { width: 30%; border-right: 2px solid $blue-light; }
+		&.city { width: 40%; border-right: 2px solid $blue-lighter; }
+		&.state { width: 30%; border-right: 2px solid $blue-lighter; }
 		&.zip { width: 30%; }
 
 	}
@@ -111,7 +113,7 @@
 		position: absolute;
 		pointer-events: none;
 		border-color: transparent;
-		border-top-color: $blue-light;
+		border-top-color: $blue-lighter;
 		border-width: 8px;
 		margin-left: -8px;
 	}
@@ -126,11 +128,13 @@
 	background: $blue-mid;
 
 	.address-label {
-		color: $blue-lightest;
+		color: $white;
 		margin-bottom: 15px;
 	}
 
 	input {
+		display: inline-block;
+		@include box-sizing(border-box);
 		border: none;
 
 		&.address { width: 80%; border-right: 2px solid $blue-mid; }

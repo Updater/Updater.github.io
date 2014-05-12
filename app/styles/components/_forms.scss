@@ -559,3 +559,55 @@ $onoffswitch: 'onoffswitch';
   right: 0;
 }
 
+//***** CHECK BOXES
+
+.radio label:before { border-radius: 50px; }
+
+.checkbox, .radio {
+  input[type=radio],
+  input[type=checkbox] {
+    display: none;
+  }
+
+  label {
+    display: block;
+    text-transform: none;
+    position: relative;
+    padding-left: 35px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    &:before {
+      content: "";
+      display: inline-block;
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      left: 0;
+      background-color: $white;
+      border: 1px solid $neutral-lighter;
+    }
+  }
+
+  input[type=radio]:checked + label:before {
+    font-family: $fontawesome;
+    content: $fa-var-circle;
+    color: $blue-dark;
+    font-size: 18px;
+    text-align: center;
+    line-height: 1.4;
+    background-color: $blue-lightest;
+    border: 1px solid $blue-light;
+  }
+
+  input[type=checkbox]:checked + label:before {
+    font-family: $fontawesome;
+    content: $fa-var-check;
+    font-size: 18px;
+    color: $blue-dark;
+    text-align: center;
+    line-height: 1.4;
+    background-color: $blue-lightest;
+    border: 1px solid $blue-light;
+  }
+}
