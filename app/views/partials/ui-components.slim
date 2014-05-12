@@ -384,7 +384,7 @@ br
         span I'm an H5 and I'm wearing $yellow-darker
       br
       h5.ribbon-yellow-mid.full-ribbon
-        span I'm an H4 and I'm wearing $yellow-mid
+        span I'm an H5 and I'm wearing $yellow-mid
 
 /* Horizontal lines */
 .row
@@ -491,12 +491,21 @@ br
                 .onoffswitch-switch
 
       .form-group
-        label.col-sm-4.control-label Radio Buttons
+        label.col-sm-4.control-label Radio Select
         .col-sm-8.radio
           input>(type="radio" id="this1" name="thisorthat" checked)
           label(for="this1") This
           input>(type="radio" id="that1" name="thisorthat")                
           label(for="that1") Or that
+
+      .form-group
+        label.col-sm-4.control-label Radio Buttons
+        .col-sm-8
+          .btn-group>(data-toggle="buttons")
+            label.btn.btn-primary
+              input>(type="radio" name="options" id="option1") Rent
+            label.btn.btn-primary
+              input>(type="radio" name="options" id="option2") Own
 
       .form-group
         label.col-sm-4.control-label Checkbox
@@ -505,6 +514,29 @@ br
           label(for="this2") This
           input>(type="checkbox" id="that2" name="petscheck")                
           label(for="that2") And that?
+
+      .form-group
+        label.col-sm-4.control-label Textarea
+        .col-sm-8
+          textarea>(class="form-control" rows="3" placeholder="Enter your poetry here")
+
+      .form-group
+        label.col-sm-4.control-label Search
+        .col-sm-8
+          .input-group
+            input>(type="text" class="form-control" placeholder="Search")
+              span.input-group-btn
+                button>(class="btn-search" type="button")
+                  span.glyphicon.glyphicon-search
+
+      .form-group
+        label.col-sm-4.control-label Dropdown
+        .col-sm-8
+          select>(class="form-control")
+            option>New York
+            option>Georgia
+            option>Hawaii
+            option>Florida
 
 /***** BUTTONS
 
