@@ -1,17 +1,4 @@
-// Blockquotes
-blockquote {
-  background: $neutral-lightest;
-  padding: ($line-height-computed / 2) $line-height-computed;
-  margin: 0 0 $line-height-computed;
-  font-size: $blockquote-font-size;
-  border-left: none;
-}
-
-// Quotes
-blockquote:before,
-blockquote:after {
-  content: "";
-}
+// HEADERS
 
 .subtle-underline {
   display: inline-block;
@@ -304,4 +291,34 @@ address {
   margin-bottom: $line-height-computed;
   font-style: normal;
   line-height: $line-height-base;
+}
+
+// PRETTY LITTLE LISTS
+
+//*****checked list
+
+.icon-lists {
+  font-family: 'FontAwesome';
+  margin:0 8px 0 -25px;
+}
+
+ul.checked-list { 
+  padding-left:40px; 
+  list-style:none; 
+  li:before {    
+      @extend .icon-lists;
+      content: '\f00c';
+      color: $green-dark;
+  }
+}
+
+ul.icon-list { 
+  list-style: none;
+}
+
+//*****icon list - Font Awesome style overrides
+
+.fa-li {
+  top: .5em;
+  color: $blue-dark;
 }
