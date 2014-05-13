@@ -1,23 +1,18 @@
-$updater-cdn: 'https://updater-partners.s3.amazonaws.com/updater_new';
+$updater-cdn: '//updater-partners.s3.amazonaws.com/updater_new';
 
 @import 'globals/fonts';
-@import 'globals/variables';
 
-$icon-font-path: '/bower_components/bootstrap-sass-official/vendor/assets/fonts/bootstrap/';
+//***** Importing Bootstrap styles and overrides
+// Core variables and mixins
+@import 'globals/bootstrapcustom';
 
-@import '../bower_components/bootstrap-sass-official/vendor/assets/stylesheets/bootstrap';
-@import 'globals/type';
-@import 'globals/scaffolding';
-@import 'components/tooltip';
-@import 'components/forms';
-@import 'components/buttons';
 @import 'components/icons';
 @import 'components/ribbons';
 @import 'components/lines';
-@import 'components/alerts';
 @import 'components/addressbox';
 @import 'components/misc';
 @import 'components/questions';
+@import 'components/styleguide';
 
 html {
   -webkit-tap-highlight-color: transparent;
@@ -29,28 +24,7 @@ html {
 
 body {
   letter-spacing: 1px;
-}
-
-*:focus {
-  outline: none !important;
-  -webkit-appearance: none;
-}
-
-.style-guide {
-  .header {
-    .nav-pills {
-      padding: 2em 0;
-    }
-  }
-}
-
-.swatch-wrap {
-  .swatch {
-    border: 1px solid $neutral-mid;
-    @include box-sizing(border-box);
-    width: 100%;
-    height: 100px;
-  }
+  margin-top: 60px;
 }
 
 .panel {

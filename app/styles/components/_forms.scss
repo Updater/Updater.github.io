@@ -43,6 +43,15 @@ label {
   text-transform: uppercase;
 }
 
+// Override form control focus mixin
+@mixin form-control-focus($color: $input-border-focus) {
+  $color-rgba: rgba(red($color), green($color), blue($color), .6);
+  &:focus {
+    outline: 0;
+    border-color: initial;
+    @include box-shadow(0 0 0, 0 0 0);
+  }
+}
 
 // Normalize form controls
 //
@@ -612,7 +621,8 @@ $onoffswitch: 'onoffswitch';
   }
 }
 
-//*******Search
+//***** SEARCH
+
 @mixin button-size($padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
   padding: .75em 1.5em;
   font-size: $font-size;
@@ -669,3 +679,41 @@ $onoffswitch: 'onoffswitch';
     @include box-shadow(none);
   }
 }
+
+//***** SELECT DROPDOWN
+
+.select {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  display: block;
+  width: 100%;
+  height: $input-height-base;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $input-color;
+  border: 1px solid $input-border;
+  border-radius: 0;
+  @include box-shadow(none);
+  @include transition(border-color ease-in-out .15s, box-shadow ease-in-out .15s);
+  @include form-control-focus();
+  background-image: url(#{$updater-cdn}/select-down.svg);
+  background-repeat: no-repeat;
+  background-position: center right 12px;
+  background-size: 10px 10px;
+  background-color: $input-bg;
+
+  select {
+    letter-spacing: 1px;
+    padding: $padding-base-vertical ($padding-base-horizontal*2) $padding-base-vertical $padding-base-horizontal;
+    background: transparent;
+    width: 100%;
+    border: 0;
+    border-radius: 0;
+    -webkit-appearance: none;
+    outline: 0;
+    cursor: pointer;
+  }
+
+}
+

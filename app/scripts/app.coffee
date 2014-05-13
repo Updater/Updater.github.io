@@ -27,9 +27,9 @@ angular.module('updaterStyleGuidesApp', [
       .when '/angular',
         templateUrl: 'partials/angular'
         controller: 'AngularCtrl'
-      .when '/slim',
-        templateUrl: 'partials/slim'
-        controller: 'SlimCtrl'
+      .when '/jade',
+        templateUrl: 'partials/jade'
+        controller: 'JadeCtrl'
       .when '/ui-components',
         templateUrl: 'partials/ui-components'
         controller: 'UiComponentsCtrl'

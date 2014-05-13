@@ -12,9 +12,6 @@ angular.module('updaterStyleGuidesApp')
       title: 'Ruby'
       link: '/ruby'
     ,
-      title: 'Rails'
-      link: '/rails'
-    ,
       title: 'CoffeeScript'
       link: '/coffeescript'
     ,
@@ -24,8 +21,8 @@ angular.module('updaterStyleGuidesApp')
       title: 'Sass'
       link: '/sass'
     ,
-      title: 'Slim'
-      link: '/slim'
+      title: 'Jade'
+      link: '/jade'
     ]
 
     $scope.isActive = (route) ->
