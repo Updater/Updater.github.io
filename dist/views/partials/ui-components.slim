@@ -86,16 +86,20 @@
 .row
   .col-md-4
     h6 Icon List
-    ul.icon-list
-      li.icon-flag
+    ul.fa-ul
+      li
+        i.fa-li.fa.fa-gavel
         strong> I am the prettiest list of all.
         | Lorem ipsum dolor sit amet
-      li.icon-code
+      li
+        i.fa-li.fa.fa-link
         strong> Some say I don't scale down very well.
         | Lorem ipsum dolor sit amet
-      li.icon-folder
+      li
+        i.fa-li.fa.fa-suitcase
         strong> They are mean.
         | Lorem ipsum dolor sit amet
+
   .col-md-4
     h6 Checked List
     ul.checked-list
@@ -111,13 +115,13 @@
   .col-md-4
     h6 Bullet List
     ul
-      li.icon-flag
+      li
         strong> I'm a basic list.
         | Lorem ipsum dolor sit amet
-      li.icon-code
+      li
         strong> Some say I'm boring.
         | Lorem ipsum dolor sit amet
-      li.icon-folder
+      li
         strong> But they just don't know the real me.
         | Lorem ipsum dolor sit amet
 
@@ -512,6 +516,16 @@ br
                 .onoffswitch-switch
 
       .form-group
+        label.col-sm-4.control-label Select Dropdown
+        .col-sm-8
+          .select
+            select
+              option state
+              option AL
+              option AK
+              option AR
+
+      .form-group
         label.col-sm-4.control-label Radio Select
         .col-sm-8.radio
           input#this1>(type="radio" name="thisorthat" checked)
@@ -524,7 +538,7 @@ br
         .col-sm-8
           .btn-group>(data-toggle="buttons")
             label.btn.btn-primary
-              input>(type="radio" name="options" id="option1") Rent
+              input>(type="radio" name="options" id="option1" checked) Rent
             label.btn.btn-primary
               input>(type="radio" name="options" id="option2") Own
 
@@ -543,21 +557,10 @@ br
 
       .form-group
         label.col-sm-4.control-label Search
-        .col-sm-8
-          .input-group
-            input>(type="text" class="form-control" placeholder="Search")
-              span.input-group-btn
-                button>(class="btn-search" type="button")
-                  span.glyphicon.glyphicon-search
-
-      .form-group
-        label.col-sm-4.control-label Dropdown
-        .col-sm-8
-          select>(class="form-control")
-            option>New York
-            option>Georgia
-            option>Hawaii
-            option>Florida
+        .col-xs-6
+          .search-custom
+           span.glyphicon.glyphicon-search
+           input>(type="search" class="form-control" placeholder="Search")
 
 /***** BUTTONS
 
