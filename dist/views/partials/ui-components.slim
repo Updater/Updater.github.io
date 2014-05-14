@@ -12,32 +12,31 @@
 
 /* Paragraphs */
 .row
-  .col-md-4
+  .col-md-6
     p.lead
       strong> I am a lead paragraph.
       | I am good for introducing content. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula. Sed iaculis risus sit amet ligula adipiscing porttitor et ut enim.
-
-  .col-md-4
+  .col-md-6
     p
       strong> I am a paragraph.
       | Hobbies include: being legible. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula. Sed iaculis risus sit amet ligula adipiscing porttitor et ut enim. Phasellus sed pretium lorem, in venenatis turpis. Integer ut mattis eros. <a href="#">Oh hai, I’m a link</a>.
 
-  .col-md-4
+.row
+  .col-md-6
     p.small
       strong> I am a small paragraph.
       | I complement paragraph text very nicely. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula. Sed iaculis risus sit amet ligula adipiscing porttitor et ut enim. Phasellus sed pretium lorem.
-
-.row
-  .col-md-4
+  .col-md-6
     p.small.text-muted
       strong> I am a small, subtle paragraph.
       | I'm, like, barely here. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula. Sed iaculis risus sit amet ligula adipiscing porttitor et ut enim. Phasellus sed pretium lorem.
 
-  .col-md-4
+.row
+  .col-md-6
     p.tiny
       strong> I am tiny text.
       | I am mighty and often contain important information. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula. Sed iaculis risus sit amet ligula adipiscing porttitor et ut enim. Phasellus sed pretium lorem, in venenatis turpis. Integer ut mattis eros.
-  .col-md-4
+  .col-md-6
     blockquote
       strong> I am a block quote. 
       | I love being blocky. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula.
@@ -507,7 +506,7 @@ br
           input.input-lg.form-control#inputLarge(type="text" placeholder="It's a large input")
 
       .form-group
-        label.col-sm-4.control-label(for="exampleSwitch") On / Off Switch
+        label.col-sm-4.control-label(for="exampleswitch") On / Off Switch
         .col-sm-8
           .onoffswitch
             input.onoffswitch-checkbox#exampleswitch(type="checkbox" checked)
@@ -537,9 +536,9 @@ br
         label.col-sm-4.control-label Radio Buttons
         .col-sm-8
           .btn-group>(data-toggle="buttons")
-            label.btn.btn-primary
+            label.btn.btn-multi
               input>(type="radio" name="options" id="option1" checked) Rent
-            label.btn.btn-primary
+            label.btn.btn-multi
               input>(type="radio" name="options" id="option2") Own
 
       .form-group
@@ -557,7 +556,7 @@ br
 
       .form-group
         label.col-sm-4.control-label Search
-        .col-xs-6
+        .col-sm-8
           .search-custom
            span.glyphicon.glyphicon-search
            input>(type="search" class="form-control" placeholder="Search")

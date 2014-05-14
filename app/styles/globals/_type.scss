@@ -280,10 +280,42 @@ blockquote.pull-right {
   }
 }
 
+blockquote {
+  position: relative;
+  background: $neutral-lightest;
+  margin: 0 0 $line-height-computed;
+  font-size: $font-size-base;
+  border-left: none;
+  @media (min-width: $screen-sm) {
+    padding: ($line-height-computed / 2) $line-height-computed ($line-height-computed / 2) ($line-height-computed * 4);
+  }
+  @media (max-width: $screen-sm) {
+    padding: ($line-height-computed / 2) $line-height-computed ($line-height-computed / 2) ($line-height-computed * 1.5);
+  }
+}
+
 // Quotes
-blockquote:before,
-blockquote:after {
-  content: "";
+blockquote:before {
+  @media (min-width: $screen-sm) {
+    font-family: $fontawesome;
+    font-size: 60px;
+    content: $fa-var-quote-left;
+    position: absolute;
+    top: 25%;
+    left: 0.5em;
+    line-height: 1;
+    color: $neutral-lighter;
+  }
+  @media (max-width: $screen-sm) {
+    font-family: $fontawesome;
+    font-size: $font-size-base;
+    content: $fa-var-quote-left;
+    position: absolute;
+    top: 22px;
+    left: 1em;
+    line-height: 1;
+    color: $neutral-lighter;
+  }
 }
 
 // Addresses
