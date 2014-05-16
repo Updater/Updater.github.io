@@ -10,26 +10,16 @@ angular.module('updaterStyleGuidesApp', [
     $routeProvider
       .when '/',
         templateUrl: 'partials/main'
-        controller: 'MainCtrl'
-      
       .when '/coffeescript',
         templateUrl: 'partials/coffeescript'
-        controller: 'CoffeescriptCtrl'
       .when '/sass',
         templateUrl: 'partials/sass'
-        controller: 'SassCtrl'
       .when '/ruby',
         templateUrl: 'partials/ruby'
-        controller: 'RubyCtrl'
-      .when '/rails',
-        templateUrl: 'partials/rails'
-        controller: 'RailsCtrl'
       .when '/angular',
         templateUrl: 'partials/angular'
-        controller: 'AngularCtrl'
       .when '/jade',
         templateUrl: 'partials/jade'
-        controller: 'JadeCtrl'
       .when '/ui-components',
         templateUrl: 'partials/ui-components'
         controller: 'UiComponentsCtrl'

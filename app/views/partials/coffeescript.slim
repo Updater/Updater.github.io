@@ -1,4 +1,834 @@
 .row
   .col-xs-12
     div(ng-include="'partials/navbar.html'")
-    <p>This is the coffeescript view.</p>
+
+.row
+  .col-xs-12
+    h1 CoffeeScript Style Guide
+
+.row
+  .col-xs-12
+    p
+      | This guide presents a collection of best-practices and coding conventions for the
+      a(href='http://jashkenas.github.com/coffee-script/') CoffeeScript
+      | programming language.
+
+    p
+      | This guide is intended to be community-driven, and contributions are highly encouraged.
+
+    p
+      | Please note that this is a work-in-progress: there is much more that can be specified, and some of the guidelines that have been specified may not be deemed to be idiomatic by the community (in which case, these offending guidelines will be modified or removed, as appropriate).
+
+    h2 Inspiration
+
+    p
+      | The details in this guide have been very heavily inspired by several existing style guides and other resources. In particular:
+
+    ul
+      li
+        | Polar Mobile's
+        a(href='https://github.com/polarmobile/coffeescript-style-guide') original guide
+      li
+        a(href='http://www.python.org/dev/peps/pep-0008/') PEP-8
+        | : Style Guide for Python Code
+      li
+        | Bozhidar Batsov's
+        a(href='https://github.com/bbatsov/ruby-style-guide') Ruby Style Guide
+      li
+        a(href='http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml') Google's JavaScript Style Guide
+      li
+        a(href='http://arcturo.github.com/library/coffeescript/04_idioms.html') Common CoffeeScript Idioms
+      li
+        | Thomas Reynolds'
+        a(href='http://awardwinningfjords.com/2011/05/13/coffeescript-specific-style-guide.html') CoffeeScript-specific Style Guide
+      li
+        | Jeremy Ashkenas'
+        a(href='https://gist.github.com/1005723') code review
+        | of
+        a(href='http://spinejs.com/') Spine
+      li
+        | The
+        a(href='https://github.com/jashkenas/coffee-script/wiki/FAQ') CoffeeScript FAQ
+
+    h2 Table of Contents
+
+    ul
+      li
+        a(href='#guide') The CoffeeScript Style Guide
+        ul
+          li
+            a(href='#code_layout') Code Layout
+          li
+            a(href='#tabs_or_spaces') Tabs or Spaces?
+          li
+            a(href='#maximum_line_length') Maximum Line Length
+          li
+            a(href='#blank_lines') Blank Lines
+          li
+            a(href='#trailing_whitespace') Trailing Whitespace
+          li
+            a(href='#encoding') Encoding
+          li
+            a(href='#code_complexity') Code Complexity
+          li
+            a(href='#module_imports') Module Imports
+          li
+            a(href='#whitespace') Whitespace in Expressions and Statements
+          li
+            a(href='#commas') Arrays, Objects and Commas
+          li
+            a(href='#comments') Comments
+          li
+            a(href='#block_comments') Block Comments
+          li
+            a(href='#inline_comments') Inline Comments
+          li
+            a(href='#naming_conventions') Naming Conventions
+          li
+            a(href='#functions') Functions
+          li
+            a(href='#strings') Strings
+          li
+            a(href='#conditionals') Conditionals
+          li
+            a(href='#looping_and_comprehensions') Looping and Comprehensions
+          li
+            a(href='#extending_native_objects') Extending Native Objects
+          li
+            a(href='#exceptions') Exceptions
+          li
+            a(href='#annotations') Annotations
+          li
+            a(href='#miscellaneous') Miscellaneous
+
+    p
+      a(name='code_layout')
+
+    h2 Code layout
+
+    p
+      a(name='documentation')
+
+    h3 Documentation
+
+    p
+      | All code should be well documented! Use inline comments to explain code that might not be immediately clear and block comments to define classes, top-level functions and major sections of code. Use the
+      a(href='https://github.com/coffeedoc/codo') Codo
+      | style of documentation on all coffeescript projects.
+
+    p
+      a(name='tabs_or_spaces')
+
+    h3 Tabs or Spaces?
+
+    p
+      | Use
+      strong<> spaces only
+      | , with
+      strong<> 2 spaces
+      | per indentation level. Never mix tabs and spaces.
+
+    p
+      a(name='maximum_line_length')
+
+    h3 Maximum Line Length
+
+    p Limit all lines to a maximum of 79 characters.
+
+    p
+      a(name='blank_lines')
+
+    h3 Blank Lines
+
+    p
+      | Separate top-level functions, class definitions and other major sections of code with two blank lines.
+
+    p Separate method definitions inside of a class with a single blank line.
+
+    p
+      | Use a single blank line within the bodies of methods or functions in cases where this improves readability (e.g., for the purpose of delineating logical sections).
+
+    p
+      a(name='trailing_whitespace')
+
+    h3 Trailing Whitespace
+
+    p Do not include trailing whitespace on any lines.
+
+    p
+      a(name='encoding')
+
+    h3 Encoding
+
+    p UTF-8 is the preferred source file encoding.
+
+    p
+      a(name='code_complexity')
+
+    h3 Code Complexity
+
+    p
+      | The cyclomatic complexity of your code should be 10 or less. This means that any given top level function or keyword should have no more than 10 nested
+      code<> function
+      | s or
+      code<> if
+      | /
+      code<> switch
+      | /
+      code<> while
+      | s. If your code requires nesting this deep, consider breaking your code into smaller functions that are then referenced in the higher-level function.
+
+    p
+      a(name='module_imports')
+
+    h2 Module Imports
+
+    p
+      code> require
+      | statements should be placed on separate lines.
+
+    p
+      | Unless require statements are being used to dynamically import files they should be placed at the top of the file, under any comments.
+
+    pre
+      code
+        | fs = require 'fs'
+        | Backbone = require 'backbone'
+        | require 'lib/setup'
+
+    p These statements should be grouped in the following order:
+
+    ol
+      li
+        | Standard library imports
+        em (if a standard library exists)
+      li Third party library imports
+      li
+        | Local imports
+        em (imports specific to this application or library)
+
+    p
+      a(name='whitespace')
+
+    h2 Whitespace in Expressions and Statements
+
+    p
+      | Avoid extraneous whitespace. However, when adding whitespace would make the code more legible include it.
+
+    ul
+      li
+        p Immediately inside parentheses, brackets or braces
+        pre
+          code
+            | $(object,array,thing) # No
+            | $( object, array, thing ) # Yes
+      li
+        p Immediately before a comma
+        pre
+          code
+            | coffeescript
+            | console.log x, y # Yes
+            | console.log x , y # No
+
+    p Additional recommendations:
+
+    ul
+      li
+        p
+          | Always surround these binary operators with a
+          strong single space
+          | on either side
+        ul
+          li
+            p
+              | assignment:
+              code \=
+          li
+            p
+              | In order to differentiate between a normal assignment and default values, this does not apply when indicating default parameters in a function declaration.
+            pre
+              code
+                | test: (param = null) -> # No
+                | test: (param=null) -> # Yes
+          li
+            p
+              | augmented assignment:
+              code +=
+              | ,
+              code -=
+              | , etc.
+          li
+            | comparisons:
+            code \==
+            | ,
+            code <
+            | ,
+            code >
+            | ,
+            code <=
+            | ,
+            code >=
+            | ,
+            code unless
+            | , etc.
+          li
+            p
+              | arithmetic operators:
+              code +
+              | ,
+              code -
+              | ,
+              code *
+              | ,
+              code /
+              | , etc.
+          li
+            p
+              em (Do not use more than one space around these operators)
+
+        pre
+        code
+          | # Yes
+          br
+          | x = 1
+          br
+          | y = 1
+          br
+          | fooBar = 3
+          br
+          | # No
+          br
+          | x      = 1
+          br
+          | y      = 1
+          br
+          | fooBar = 3
+
+    p
+      a(name='commas')
+
+    h2 Arrays, Objects and Commas
+
+    p
+      | When declaring an array or object, list properties on a single line if there are few properties or on multiple lines if there are many properties.
+
+    p
+      | When on a single line, always use commas and place spaces before the first property and after the last property.
+
+    p
+      | When on multiple lines, do not use commas and indent the properties 2 spaces from the indentation level of the beginning of the declaration.
+
+    pre
+      code
+        | someObject = { foo: foo, bar: bar, baz: baz }
+        br
+        | someArray = [
+        br
+        |   '1'
+        br
+        |   '2'
+        br
+        |   '3'
+        br
+        |   4
+        br
+        |   5
+        br
+        |   thing
+        br
+        |   wat
+        br
+        | ]
+
+    p
+      a(name='comments')
+
+    h2 Comments
+
+    p
+      | If modifying code that is described by an existing comment, update the comment such that it accurately reflects the new code.
+
+    p
+      | The first word of the comment should be capitalized, unless the first word is an identifier that begins with a lower-case letter.
+
+    p Comments should clearly explain the code and end with a period.
+
+    p
+      a(name='block_comments')
+
+    h3 Block Comments
+
+    p Block comments apply to the block of code that follows them.
+
+    p
+      | Each line of a block comment starts with a
+      code #
+      | and a single space, and should be indented at the same level of the code that it describes.
+
+    p
+      | Paragraphs inside of block comments are separated by a line containing a single
+      code #
+      | . All block comments should be terminated by a line containing a single
+      code #
+      | .
+
+    pre
+      code
+        | # This is a block comment. Note that if this were a real block
+        br
+        | # comment, we would actually be describing the proceeding code.
+        br
+        | #
+        br
+        | # This is the second paragraph of the same block comment. Note
+        br
+        | # that this paragraph was separated from the previous paragraph
+        br
+        | # by a line containing a single comment character.
+        br
+        | #
+        br
+        |
+        br
+        | init()
+        br
+        | start()
+        br
+        | stop()
+
+    p
+      a(name='inline_comments')
+
+    h3 Inline Comments
+
+    p
+      | Inline comments are placed on the line immediately above the statement that they are describing. If the inline comment is sufficiently short, it can be placed on the same line as the statement (separated by a single space from the end of the statement).
+
+    p
+      | All inline comments should start with a
+      code #
+      | and a single space.
+
+    p
+      | The use of inline comments should be limited, because their existence is typically a sign of a code smell.
+
+    p Do not use inline comments when they state the obvious:
+
+    pre
+      code
+        | # No
+        br
+        | x = x + 1 # Increment x
+
+    p However, inline comments can be useful in certain scenarios:
+
+    pre
+      | Yes
+      br
+      | x = x + 1 # Compensate for border
+
+    p
+      a(name='naming_conventions')
+
+    h2 Naming Conventions
+
+    p
+      | Use
+      code camelCase
+      | (with a leading lowercase character) to name all variables, methods, and object properties.
+
+    p
+      | Use
+      code CamelCase
+      | (with a leading uppercase character) to name all classes.
+      em
+        | (This style is also commonly referred to as
+        code PascalCase
+        | ,
+        code CamelCaps
+        | , or
+        code CapWords
+        | , among
+        a(href='http://en.wikipedia.org/wiki/CamelCase#Variations_and_synonyms') other alternatives
+        | .)
+
+    p
+      em
+        | (The
+        strong official
+        | CoffeeScript convention is camelcase, because this simplifies interoperability with JavaScript. For more on this decision, see
+        a(href='https://github.com/jashkenas/coffee-script/issues/425') here
+        | .)
+
+    p For constants, use all uppercase with underscores:
+
+    pre
+      code
+        | CONSTANT_LIKE_THIS
+
+    p
+      | Variables that are intended to be "private" should begin with a leading underscore:
+
+    pre
+      code
+        | _privateVar = 'asdf'
+
+    p
+      a(name='functions')
+
+    h2 Functions
+
+    p
+      em These guidelines also apply to the methods of a class.
+
+    p
+      | When declaring a function that takes arguments, always use a single space after the closing parenthesis of the arguments list:
+
+    pre
+      code
+        | foo = (arg1, arg2) -> # Yes
+        br
+        | foo = (arg1, arg2)-> # No
+
+    p Do not use parentheses when declaring functions that take no arguments:
+
+    pre
+      code
+        | bar = -> # Yes
+        br
+        | bar = () -> # No
+    p
+      | Never declare an implicit object in a function call. Always define the object elsewhere or wrap it in curly braces.
+
+    pre
+      code
+        | # No
+        br
+        | doSomething foo: foo, bar: bar
+        br
+        br
+        | # Yes
+        br
+        | params =
+        br
+        | foo: foo
+        br
+        | bar: bar
+        br
+        | doSomething params
+
+    p
+      | In cases where method calls are being chained and the code does not fit on a single line, each call should be placed on a separate line and indented by one level (i.e., two spaces), with a leading
+      code .
+      | .
+    pre
+      code
+        | [1..3]
+        br
+        |   .map((x) -> x * x)
+        br
+        |   .concat([10..12])
+        br
+        |   .filter((x) -> x < 11)
+        br
+        |   .reduce((x, y) -> x + y)
+
+    p
+      | In cases when the results of functions are being chained together, always use parentheses for clarity.
+
+    pre
+      code
+        | result = console.log typeof classThatReturns object # No
+        br
+        | result = console.log( typeof( classThatReturns(object) ) ) # Yes
+
+    p
+      | When calling functions, choose to omit or include parentheses in such a way that optimizes for readability. Keeping in mind that "readability" can be subjective, the following examples demonstrate cases where parentheses have been omitted or included in a manner that the community deems to be optimal:
+    pre
+      code
+        | baz 12
+        br
+        br
+        | brush.ellipse x: 10, y: 20 # Braces can also be omitted or included for readability
+        br
+        | foo(4).bar(8)
+        br
+        | obj.value(10, 20) / obj.value(20, 10)
+        br
+        | print inspect value
+        br
+        br
+        | new Tag(new Value(a, b), new Arg(c))
+
+    p
+      | Using parentheses to group functions (instead of being used to group function parameters) is an anti-pattern and should not be used. Examples of using this style (hereafter referred to as the "function grouping style"):
+
+    pre
+      code
+        | ($ '#selektor').addClass 'klass' # No
+        br
+        | (foo 4).bar 8 # No
+
+    p This is in contrast to:
+
+    pre
+      code
+        | $('#selektor').addClass 'klass' # Yes
+        br
+        | foo(4).bar 8 # Yes
+
+    p
+      | In cases when a function is only used by a class itself, declare that function as a private method within the class's closure and reference it in the class. Do not expose methods and properties that are not meant to be available to other parts of the code.
+    p
+      a(name='strings')
+
+    h2 Strings
+
+    p Use string interpolation instead of string concatenation:
+
+    pre
+      code
+        == '"this is an #{adjective} string" # Yes'
+        br
+        == '"this is an " + adjective + " string" # No'
+
+    p
+      | Prefer single quoted strings ('') instead of double quoted ("") strings, unless features like string interpolation are being used for the given string.
+
+    p
+      a(name='conditionals')
+
+    h2 Conditionals
+
+    p
+      | Favor
+      code<> if (not x)
+      | over
+      code<> unless
+      | for negative conditions.
+
+    p
+      | Instead of using
+      code<> unless...else
+      | , use
+      code<> if...else
+      | :
+    pre
+      code
+        | # Yes
+        br
+        | if true
+        br
+        |   ...
+        br
+        | else
+        br
+        |   ...
+        br
+        br
+        | # No
+        br
+        | unless false
+        br
+        |   ...
+        br
+        | else
+        br
+        |   ...
+
+    p Multi-line if/else clauses should use indentation:
+    pre
+      code
+        | # Yes
+        br
+        | if true
+        | ...
+        | else
+        | ...
+        br
+        | # No
+        br
+        | if true then ...
+        | else ...
+
+    p
+      a(name='looping_and_comprehensions')
+
+    h2 Looping and Comprehensions
+
+    p
+      | Take advantage of lodash functions whenever possible. If there isn't an appropriate function in the library or if a comprehension would be more legible, use a comprehension. Only use native loops when necessary:
+
+    pre
+      code
+        | # Yes
+        br
+        | result = (item.name for item in array)
+        br
+        br
+        | # No
+        br
+        | results = []
+        br
+        | for item in array
+        br
+        | results.push item.name
+
+    p To filter:
+
+    pre
+      code
+        | # Best
+        br
+        | result = _.where array, name: test
+        br
+        | # Okay
+        br
+        | result = (item for item in array when item.name is "test")
+
+    p To iterate over the keys and values of objects:
+
+    pre
+      code
+        | object = one: 1, two: 2
+        br
+        == 'alert("#{key} = #{value}") for key, value of object'
+
+    p
+      a(name='#extending_native_objects')
+
+    h2 Extending Native Objects
+
+    p Do not modify native objects. Ever.
+
+    p
+      | For example, do not modify
+      code<> Array.prototype
+      | to introduce
+      code<> Array#forEach
+      | .
+    p
+      a(name='exceptions')
+
+    h2 Exceptions
+
+    p Do not suppress exceptions.
+
+    p
+      a(name='annotations')
+
+    h2 Annotations
+
+    p
+      | Use annotations
+      em<> only
+      | when necessary to describe a specific action that cannot be completed in the current sprint and when there is not a better place to document the missing feature. As a general rule, committed code should never contain TODOs where dev branches may contain them more as a note-to-self.
+
+    p
+      | Write the annotation on the line immediately above the code that the annotation is describing.
+
+    p
+      | The annotation keyword should be followed by a colon and a space, and a descriptive note.
+
+    pre
+      code
+        | #FIXME: The client's current state should **not** affect payload processing.
+        br
+        | resetClientState()
+        br
+        | processPayload()
+
+
+    p Annotation types:
+
+    p
+      | The only annotation type that should be used is
+      code<> TODO
+      | such that any notes can be easily grepped.
+
+    p
+      a(name='miscellaneous')
+
+    h2 Miscellaneous
+
+    p
+      code<> and
+      | is preferred over
+      code<> &&
+      | .
+    p
+      code<> or
+      | is preferred over
+      code<> ||
+      | .
+    p
+      code<> is
+      | is preferred over
+      code<> \==
+      | .
+    p
+      code<> not
+      | is preferred over
+      code<> !
+      | .
+
+    p
+      code==<> "or="
+      | should be used when possible:
+    pre
+      code
+        | temp or= {} # Yes
+        br
+        | temp = temp || {} # No
+
+    p
+      | Prefer shorthand notation (::) for accessing an object's prototype:
+
+    pre
+      code
+        | Array::slice # Yes
+        br
+        | Array.prototype.slice # No
+
+    p
+      | Prefer
+      code<> @property
+      | over
+      code<> this.property
+      | .
+
+    pre
+      code
+        | return @property # Yes
+        br
+        | return this.property # No
+
+    p
+      | However, avoid the use of
+      strong<> standalone
+      code<> @
+      | :
+
+    pre
+      code
+        | return this # Yes
+        br
+        | return @ # No
+
+    p
+      | Avoid
+      code<> return
+      | where not required, unless the explicit return increases clarity. If a function or method is not intended to return anything, end the declaration with a
+      code<> return
+      | statement.
+
+    p
+      | Use splats (
+      code<> ...
+      | ) when working with functions that accept variable numbers of arguments:
+
+    pre
+      code
+        | console.log args... # Yes
+        br
+        | (a, b, c, rest...) - # Yes

@@ -20,6 +20,9 @@ module.exports = function (grunt) {
     slim: {
       dist: {
         logicLess: true,
+        options: {
+          pretty: true,
+        },
         files: [{
           expand: true,
           cwd: 'app/views',

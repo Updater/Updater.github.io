@@ -1,6 +1,6 @@
 # Updater CSS Style Guide
 
-Welcome to the Updater CSS Styleguide. It's pretty rad. Before reading this, it's recommended that you are familiar with or research __specificity__, the LESS syntax, and common network bottlenecks/reasons for slow page loading time.
+Welcome to the Updater CSS Styleguide. It's pretty rad. Before reading this, it's recommended that you are familiar with or research __specificity__, the SCSS syntax, and common network bottlenecks/reasons for slow page loading time.
 
 Some of these practices are not fully implemented yet so please update/upgrade files as you work on them.
 
@@ -18,7 +18,7 @@ If you're visiting from the internet, feel free to learn from our style. This is
 
 Here is good example syntax:
 
-```less
+```scss
 // This is a good example!
 .styleguide-format {
   border: 1px solid #0f0;
@@ -30,7 +30,7 @@ Here is good example syntax:
 }
 ```
 
-## LESS Style
+## SCSS Style
 
 * Any `@variable` or `.mixin` that is used in more than one file should be defined in `assets/css/globals/`. Others should be put at the top of the file where they're used.
 * As a rule of thumb, don't nest further than 3 levels deep. If you find yourself going further, think about reorganizing your rules (either the specificity needed, or the layout of the nesting). The are 2 dangers here besides code complexity. One is that you will create styles that are borderline impossible to override in other modules because they're too specific. The other is that you will bloat the style files and slow down the loading speed of the site.
@@ -45,27 +45,27 @@ In general, the CSS file organization should be separated into page/content spec
 assets
 └── css
     ├── globals
-    │   ├── fonts.less
-    │   ├── icons.less
-    │   ├── colors.less
-    │   ├── header.less
-    │   ├── footer.less
-    │   └── agent.less
+    │   ├── fonts.scss
+    │   ├── icons.scss
+    │   ├── colors.scss
+    │   ├── header.scss
+    │   ├── footer.scss
+    │   └── agent.scss
     │
     ├── partner
-    │   ├── bhg.less
-    │   ├── allentate.less
-    │   └── remax.less
+    │   ├── bhg.scss
+    │   ├── allentate.scss
+    │   └── remax.scss
     │
-    ├── global.less
-    ├── homepage.less
-    ├── change_of_address.less
-    └── agent_signup.less
+    ├── global.scss
+    ├── homepage.scss
+    ├── change_of_address.scss
+    └── agent_signup.scss
 ```
 
-You should explicitly **import** any global LESS that is required for the document you're working on. Do not import files that are not in the globals folder. If they are shared styles, they should always go in globals. Here's a good example:
+You should explicitly **import** any global SCSS that is required for the document you're working on. Do not import files that are not in the globals folder. If they are shared styles, they should always go in globals. Here's a good example:
 
-```less
+```scss
 @import 'globals/fonts';
 @import 'globals/colors';
 
@@ -102,7 +102,7 @@ Only start with an element + class namespace when writing styles that need to ov
 </ul>
 ```
 
-```less
+```scss
 // Needed to override .category-list in bootstrap.
 ul.category-list {
   padding-left: 20px;
