@@ -75,6 +75,7 @@
     "node": "~0.10.26"
   },
   "scripts": {
+    "postinstall": "grunt build",
     "start": "grunt serve",
     "test": "grunt test"
   },
