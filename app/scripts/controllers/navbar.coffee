@@ -4,25 +4,25 @@ angular.module('updaterStyleGuidesApp')
   .controller 'NavbarCtrl', ($scope, $location) ->
     $scope.menu = [
       title: 'Home'
-      link: '/'
+      link: '#/'
     ,
       title: 'UI Components'
-      link: '/ui-components'
+      link: '#/ui-components'
     ,
       title: 'Ruby'
-      link: '/ruby'
+      link: '#/ruby'
     ,
       title: 'CoffeeScript'
-      link: '/coffeescript'
+      link: '#/coffeescript'
     ,
       title: 'Angular'
-      link: '/angular'
+      link: '#/angular'
     ,
       title: 'Sass'
-      link: '/sass'
+      link: '#/sass'
     ,
       title: 'Jade'
-      link: '/jade'
+      link: '#/jade'
     ]
 
     $scope.isActive = (route) ->

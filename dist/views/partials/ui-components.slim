@@ -38,7 +38,7 @@
       | I am mighty and often contain important information. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula. Sed iaculis risus sit amet ligula adipiscing porttitor et ut enim. Phasellus sed pretium lorem, in venenatis turpis. Integer ut mattis eros.
   .col-md-6
     blockquote
-      strong> I am a block quote. 
+      strong> I am a block quote.
       | I love being blocky. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi in tincidunt ligula.
 
 
@@ -135,26 +135,26 @@
 /* Blues */
 .row
   .col-sm-2.swatch-wrap(ng-repeat="blueSwatch in blueSwatches")
-    .swatch(style="background-color: \#{{blueSwatch.color}}")
-    p.text-muted.small.text-center \#{{blueSwatch.color}}
+    .swatch(style="background-color: {{blueSwatch}}")
+    p.text-muted.small.text-center== '{{blueSwatch}}'
 
 /* Greens */
 .row
   .col-sm-2.swatch-wrap(ng-repeat="greenSwatch in greenSwatches")
-    .swatch(style="background-color: \#{{greenSwatch.color}}")
-    p.text-muted.small.text-center \#{{greenSwatch.color}}
+    .swatch(style="background-color: {{greenSwatch}}")
+    p.text-muted.small.text-center== '{{greenSwatch}}'
 
 /* Reds */
 .row
   .col-sm-2.swatch-wrap(ng-repeat="redSwatch in redSwatches")
-    .swatch(style="background-color: \#{{redSwatch.color}}")
-    p.text-muted.small.text-center \#{{redSwatch.color}}
+    .swatch(style="background-color: {{redSwatch}}")
+    p.text-muted.small.text-center== '{{redSwatch}}'
 
 /* Yellows */
 .row
   .col-sm-2.swatch-wrap(ng-repeat="yellowSwatch in yellowSwatches")
-    .swatch(style="background-color: \#{{yellowSwatch.color}}")
-    p.text-muted.small.text-center \#{{yellowSwatch.color}}
+    .swatch(style="background-color: {{yellowSwatch}}")
+    p.text-muted.small.text-center== '{{yellowSwatch}}'
 
 /* Neutrals */
 .row
@@ -162,8 +162,8 @@
     h6 Neutrals
 .row
   .col-sm-2.swatch-wrap(ng-repeat="neutralSwatch in neutralSwatches")
-    .swatch(style="background-color: \#{{neutralSwatch.color}}")
-    p.text-muted.small.text-center \#{{neutralSwatch.color}}
+    .swatch(style="background-color: {{neutralSwatch}}")
+    p.text-muted.small.text-center== '{{neutralSwatch}}'
 
 
 /***** ICONS
@@ -529,7 +529,7 @@ br
         .col-sm-8.radio
           input#this1>(type="radio" name="thisorthat" checked)
           label(for="this1") This
-          input#that1>(type="radio" name="thisorthat")                
+          input#that1>(type="radio" name="thisorthat")
           label(for="that1") Or that
 
       .form-group
@@ -546,7 +546,7 @@ br
         .col-sm-8.checkbox
           input>(type="checkbox" id="this2" name="petscheck" checked)
           label(for="this2") This
-          input>(type="checkbox" id="that2" name="petscheck")                
+          input>(type="checkbox" id="that2" name="petscheck")
           label(for="that2") And that?
 
       .form-group
@@ -623,7 +623,7 @@ br
     h3.subtle-underline Question Module
     p
       | This box appears throughout the site at appropriate times to ask a user a question about their move. It should always inform the user why the question is being asked and how it will help them.
-    
+
 .row
   .col-md-12
     .question-module
@@ -642,7 +642,7 @@ br
               .form-group.radio
                 input>(type="radio" id="dogsradio" name="petsradio" checked)
                 label(for="dogsradio") Dog(s)
-                input>(type="radio" id="catsradio" name="petsradio")                
+                input>(type="radio" id="catsradio" name="petsradio")
                 label(for="catsradio") Cat(s)
                 input>(type="radio" id="bothradio" name="petsradio")
                 label(for="bothradio") Both
