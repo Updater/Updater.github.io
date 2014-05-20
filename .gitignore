@@ -6,3 +6,4 @@ heroku
 app/views/*.html
 app/views/*/*.html
 dist/*
+app/bower_components/*
