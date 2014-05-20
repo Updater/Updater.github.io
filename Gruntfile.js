@@ -197,6 +197,15 @@ module.exports = function (grunt) {
       }
     },
 
+    // Run `bower install` task
+    bower: {
+      install: {
+        options: {
+          targetDir: '<%= yeoman.app %>/app/bower_components',
+        }
+      }
+    },
+
     // Automatically inject Bower components into the app
     'bower-install': {
       app: {
@@ -532,6 +541,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'bower',
     'bower-install',
     'useminPrepare',
     'slim',
